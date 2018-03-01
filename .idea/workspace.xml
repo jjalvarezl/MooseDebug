@@ -2,8 +2,41 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eecb478a-763a-4b00-902e-16cd9d052658" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/markdown-navigator.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/markdown-navigator/profiles_settings.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/resourceBundles.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/LICENSE" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/MOOSE-DEBUG.iml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/README.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/MOOSE-DEBUG/LanguageChooserForm_en_US.properties" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/MOOSE-DEBUG/LanguageChooserForm_es_CO.properties" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/MOOSE-DEBUG/MainForm_en_US.properties" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/MOOSE-DEBUG/MainForm_es_CO.properties" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/I18N/LanguageChooserForm_en_US.properties" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/I18N/LanguageChooserForm_es_CO.properties" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/I18N/MainForm_en_US.properties" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/I18N/MainForm_es_CO.properties" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/MooseDebug.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/abstracts/MVC/Controller.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/abstracts/MVC/Model.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/abstracts/MVC/View.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/LanguageChooserController.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/MainController.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/models/ConfigurationModel.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/utils/Language.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/views/LanguageChooser/LanguageChooserForm.form" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/views/LanguageChooser/LanguageChooserForm.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/views/LanguageChooser/LanguageChooserView.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/views/Main/MainForm.form" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/views/Main/MainForm.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/views/Main/MainView.java" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
