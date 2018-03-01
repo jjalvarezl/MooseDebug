@@ -1,2 +1,4 @@
-# MooseDebug
-Software for making sugestions about Moose execution and environment 
+# Moose Debug
+
+Software for making suggestions about Moose execution and environment
+
