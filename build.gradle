@@ -3,8 +3,11 @@ version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
 apply plugin: 'application'
+apply plugin: 'jacoco'
+
 mainClassName="MooseDebug"
 sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 repositories {
     mavenCentral()
@@ -13,4 +16,26 @@ repositories {
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
     compile 'com.intellij:forms_rt:7.0.3'
+}
+
+jacoco {
+    toolVersion = '0.8.0'
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled true
+        html.enabled false
+    }
+}
+
+check.dependsOn jacocoTestReport
+
+compileJava {
+    options.encoding = 'UTF-8'
+    options.compilerArgs << "-Xlint:none"
+}
+
+compileTestJava {
+    options.encoding = 'UTF-8'
 }
