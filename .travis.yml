@@ -1,5 +1,11 @@
 language: java
-sudo: false # faster builds
+sudo: required # faster builds
+jdk:
+  - oraclejdk7
+  - openjdk7
+
+before_install:
+ - chmod +x gradlew
 
 after_success:
   - if [ -e ./gradlew ]; then ./gradlew jacocoTestReport;else gradle jacocoTestReport;fi
