@@ -1,8 +1,8 @@
 language: java
 sudo: required # faster builds
 jdk:
-  - oraclejdk7
-  - openjdk7
+  - oraclejdk8
+  - openjdk8
 
 before_install:
  - chmod 777 -R .
