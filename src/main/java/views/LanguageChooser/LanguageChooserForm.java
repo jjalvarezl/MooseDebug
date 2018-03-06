@@ -27,7 +27,7 @@ public class LanguageChooserForm {
 
         GridBagConstraints c = new GridBagConstraints();
 
-        jListLanguages = new JList();
+        jListLanguages = new JList<>();
         //jListLanguages.setBorder(BorderFactory.createEmptyBorder(10,0,10,0));
         //jListLanguages.add(Box.createRigidArea(new Dimension(0,5)));
         c.fill = GridBagConstraints.HORIZONTAL;

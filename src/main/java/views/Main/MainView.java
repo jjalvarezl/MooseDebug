@@ -5,6 +5,7 @@ import abstracts.MVC.Model;
 import abstracts.MVC.View;
 import models.ConfigurationModel;
 import utils.Language;
+import views.LanguageChooser.LanguageChooserForm;
 import views.LanguageChooser.LanguageChooserView;
 
 import javax.swing.*;
@@ -18,11 +19,10 @@ public class MainView extends View {
     private JMenuItem languageJMenuItem;
 
     public MainView () {
-        mooseDebugger = new JFrame(Language.getResource().getString("FormTitle"));
+        mooseDebugger = new JFrame();
         mooseDebugger.setContentPane(new MainForm().getjPanelMain());
         mooseDebugger.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        addMenuToMainForm();
-        configureEvents();
+        initFormContent();
         mooseDebugger.pack();
         mooseDebugger.setLocationRelativeTo(null);
         mooseDebugger.setVisible(true);
@@ -67,6 +67,17 @@ public class MainView extends View {
 
         //Adding mainFormJMenuBar to mainForm
         mooseDebugger.setJMenuBar(mainFormJMenuBar);
+        mooseDebugger.invalidate();
+        mooseDebugger.validate();
+        mooseDebugger.repaint();
+    }
+
+    private void initFormContent(){
+        Language.setResource(MainForm.class.getName());
+        mooseDebugger.setTitle(Language.getResource().getString("FormTitle"));
+        addMenuToMainForm();
+        configureEvents();
+
     }
 
     private void configureEvents() {
@@ -87,6 +98,7 @@ public class MainView extends View {
     @Override
     public void update(Observable observable, Object o) {
         System.out.println("Update from MainView");
+        initFormContent();
     }
 
     @Override

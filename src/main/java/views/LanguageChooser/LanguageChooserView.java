@@ -1,13 +1,10 @@
 package views.LanguageChooser;
 
 import abstracts.MVC.Controller;
-import abstracts.MVC.Model;
 import abstracts.MVC.View;
-import models.ConfigurationModel;
 import utils.Language;
 
 import javax.swing.*;
-import java.awt.event.ActionListener;
 import java.util.*;
 
 public class LanguageChooserView extends View {
@@ -17,7 +14,7 @@ public class LanguageChooserView extends View {
     private JDialog languageChooserJDialog;
     private LanguageChooserForm languageChooserForm;
     private ResourceBundle rb;
-    HashMap<Integer, String[]> languagesCountriesMap;
+    private HashMap<Integer, String[]> languagesCountriesMap;
 
     private LanguageChooserView (){
         languageChooserJDialog = new JDialog();
@@ -47,10 +44,13 @@ public class LanguageChooserView extends View {
         languagesCountriesMap= new HashMap<>();
         languagesCountriesMap.put(0, new String[]{"en", "US"});
         languagesCountriesMap.put(1, new String[]{"es", "CO"});
-        Vector<String> languages = new Vector<>();
-        languages.add("English (en_US)");
-        languages.add("Español (es_CO)");
-        languageChooserForm.getJListLanguages().setListData(languages);
+        DefaultListModel<String> model = new DefaultListModel<>();
+        model.addElement("English (en_US)");
+        model.addElement("Español (es_CO)");
+        languageChooserForm.getJListLanguages().setModel(model);
+
+        /*model.addElement("English (en_US)");
+        model.addElement("Español (es_CO)");*/
         languageChooserForm.getJButtonAccept().setText(rb.getString("jButtonAccept"));
         languageChooserForm.getJButtonCancel().setText(rb.getString("jButtonCancel"));
         languageChooserJDialog.setContentPane(languageChooserForm.getJPanelMain());
