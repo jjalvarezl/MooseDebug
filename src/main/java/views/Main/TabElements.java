@@ -1,7 +1,6 @@
 package views.Main;
 
 import abstracts.MVC.Controller;
-import javafx.scene.control.Tab;
 
 import javax.swing.*;
 import java.awt.*;
