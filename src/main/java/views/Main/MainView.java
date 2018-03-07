@@ -1,39 +1,43 @@
 package views.Main;
 
 import abstracts.MVC.Controller;
-import abstracts.MVC.Model;
 import abstracts.MVC.View;
-import models.ConfigurationModel;
 import utils.Language;
-import views.LanguageChooser.LanguageChooserForm;
 import views.LanguageChooser.LanguageChooserView;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionListener;
 import java.util.Observable;
 
 public class MainView extends View {
-    private JFrame mooseDebugger;
+    //Components
+    private JFrame jMainFrame;
+    private MainForm mainForm;
 
-    //Declarando los menus
+    //Menu buttons declarations
     private JMenuItem languageJMenuItem;
 
+    //Action commands
+    //public static final String
+
     public MainView () {
-        mooseDebugger = new JFrame();
-        mooseDebugger.setContentPane(new MainForm().getjPanelMain());
-        mooseDebugger.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        jMainFrame = new JFrame();
+        mainForm = new MainForm();
+        jMainFrame.setContentPane(mainForm.getjPanelMain());
+        jMainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         initFormContent();
-        mooseDebugger.pack();
-        mooseDebugger.setLocationRelativeTo(null);
-        mooseDebugger.setVisible(true);
+        jMainFrame.setMinimumSize(new Dimension(600,400));
+        jMainFrame.setLocationRelativeTo(null);
+        jMainFrame.setVisible(true);
     }
 
     private void addMenuToMainForm (){
 
         //Making the bar
-        JMenuBar mainFormJMenuBar = new JMenuBar();
-        JMenu fileJMenu = new JMenu(Language.getResource().getString("fileJMenu"));
-        fileJMenu.setMnemonic(KeyStroke.getKeyStroke(Language.getResource().getString("fileJMenuMnemotecnic")).getKeyCode());
+        JMenuBar jMenuBarMainForm = new JMenuBar();
+        JMenu jMenuFile = new JMenu(Language.getResource().getString("jMenuFile"));
+        jMenuFile.setMnemonic(KeyStroke.getKeyStroke(Language.getResource().getString("jMenuFileMnemotecnic")).getKeyCode());
         JMenu newJMenuItem = new JMenu(Language.getResource().getString("newJMenuItem"));
         newJMenuItem.setMnemonic(KeyStroke.getKeyStroke(Language.getResource().getString("newJMenuItemMnemotecnic")).getKeyCode());
         JMenuItem mooseInstanceJMenuItem = new JMenuItem(Language.getResource().getString("mooseInstanceJMenuItem"));
@@ -48,6 +52,7 @@ public class MainView extends View {
         preferencesJMenu.setMnemonic(KeyStroke.getKeyStroke(Language.getResource().getString("preferencesJMenuMnemotecnic")).getKeyCode());
         languageJMenuItem = new JMenuItem(Language.getResource().getString("languageJMenuItem"));
         languageJMenuItem.setMnemonic(KeyStroke.getKeyStroke(Language.getResource().getString("languageJMenuItemMnemotecnic")).getKeyCode());
+        //languageJMenuItem.setActionCommand();
         JMenu helpJMenu = new JMenu(Language.getResource().getString("helpJMenu"));
         helpJMenu.setMnemonic(KeyStroke.getKeyStroke(Language.getResource().getString("helpJMenuMnemotecnic")).getKeyCode());
         JMenuItem aboutJMenuItem = new JMenuItem(Language.getResource().getString("aboutJMenuItem"));
@@ -59,22 +64,22 @@ public class MainView extends View {
         preferencesJMenu.add(languageJMenuItem);
         editJMenu.add(preferencesJMenu);
         newJMenuItem.add(mooseInstanceJMenuItem);
-        fileJMenu.add(newJMenuItem);
-        fileJMenu.add(exitMenuItem);
-        mainFormJMenuBar.add(fileJMenu);
-        mainFormJMenuBar.add(editJMenu);
-        mainFormJMenuBar.add(helpJMenu);
+        jMenuFile.add(newJMenuItem);
+        jMenuFile.add(exitMenuItem);
+        jMenuBarMainForm.add(jMenuFile);
+        jMenuBarMainForm.add(editJMenu);
+        jMenuBarMainForm.add(helpJMenu);
 
         //Adding mainFormJMenuBar to mainForm
-        mooseDebugger.setJMenuBar(mainFormJMenuBar);
-        mooseDebugger.invalidate();
-        mooseDebugger.validate();
-        mooseDebugger.repaint();
+        jMainFrame.setJMenuBar(jMenuBarMainForm);
+        jMainFrame.invalidate();
+        jMainFrame.validate();
+        jMainFrame.repaint();
     }
 
     private void initFormContent(){
         Language.setResource(MainForm.class.getName());
-        mooseDebugger.setTitle(Language.getResource().getString("FormTitle"));
+        jMainFrame.setTitle(Language.getResource().getString("FormTitle"));
         addMenuToMainForm();
         configureEvents();
 
