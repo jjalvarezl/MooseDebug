@@ -40,7 +40,10 @@ public class TabElements {
         //Left side of the board
         setjTextAreaMooseOutput(new JTextArea());
         getjTextAreaMooseOutput().setEditable(false);
+        getjTextAreaMooseOutput().setLineWrap(true);
+        getjTextAreaMooseOutput().setWrapStyleWord(true);
         setjScrollPaneLeftSide(new JScrollPane(getjTextAreaMooseOutput()));
+        getjScrollPaneLeftSide().setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 
         //Right side of the board
         setjPanelRightSide(new JPanel());
@@ -55,7 +58,6 @@ public class TabElements {
         getjPanelRightSide().add(getjLabelMooseExecutable(), constraints);
 
         setjTextFieldMooseExecutable(new JTextField());
-        getjTextFieldMooseExecutable().setText("HOLA MUNDO");
         constraints.gridx = 1;
         getjPanelRightSide().add(getjTextFieldMooseExecutable(), constraints);
 

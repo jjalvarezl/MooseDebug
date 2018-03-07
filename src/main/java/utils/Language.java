@@ -54,7 +54,7 @@ public class Language {
         ConfigurationModel.putString(ConfigurationModel.COUNTRY, country);
         System.out.println("Observers: "+ConfigurationModel.getInstance().countObservers());
         if (ConfigurationModel.getInstance().countObservers()>0) {
-            ConfigurationModel.getInstance().notifyObservers("Cambié!!");
+            ConfigurationModel.getInstance().notifyObservers();
         }
 
         return isLocaleSaved;

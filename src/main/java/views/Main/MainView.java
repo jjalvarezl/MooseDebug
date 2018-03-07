@@ -112,8 +112,12 @@ public class MainView extends View {
 
     @Override
     public void update(Observable observable, Object o) {
-        System.out.println("Update from MainView");
-        initFormContent();
+        if (o != null){
+            mainForm.getTabbedPaneTabs().get(0).getjTextAreaMooseOutput().append(((String) o)+"\n");
+        } else {
+            System.out.println("Update from MainView");
+            initFormContent();
+        }
     }
 
     @Override

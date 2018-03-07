@@ -5,7 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dcba5537-2547-4074-bd02-2dab0049b5b4" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/models/MooseRunner.java" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.0/fileContent/fileContent.lock" afterPath="$PROJECT_DIR$/.gradle/4.0/fileContent/fileContent.lock" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.bin" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.lock" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.0/fileHashes/resourceHashesCache.bin" afterPath="$PROJECT_DIR$/.gradle/4.0/fileHashes/resourceHashesCache.bin" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.0/taskHistory/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/4.0/taskHistory/fileSnapshots.bin" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.0/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.0/taskHistory/taskHistory.bin" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.0/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.0/taskHistory/taskHistory.lock" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/MainController.java" afterPath="$PROJECT_DIR$/src/main/java/controllers/MainController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/Language.java" afterPath="$PROJECT_DIR$/src/main/java/utils/Language.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/views/Main/MainView.java" afterPath="$PROJECT_DIR$/src/main/java/views/Main/MainView.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/views/Main/TabElements.java" afterPath="$PROJECT_DIR$/src/main/java/views/Main/TabElements.java" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -59,17 +70,17 @@
       <file leaf-file-name="MainView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/views/Main/MainView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2040">
-              <caret line="138" column="5" lean-forward="false" selection-start-line="138" selection-start-column="5" selection-end-line="138" selection-end-column="5" />
+            <state relative-caret-position="186">
+              <caret line="117" column="55" lean-forward="false" selection-start-line="117" selection-start-column="55" selection-end-line="117" selection-end-column="55" />
               <folding>
-                <element signature="e#5390#5391#0" expanded="true" />
-                <element signature="e#5421#5422#0" expanded="true" />
-                <element signature="e#5471#5472#0" expanded="true" />
-                <element signature="e#5511#5512#0" expanded="true" />
-                <element signature="e#5548#5549#0" expanded="true" />
+                <element signature="e#5550#5551#0" expanded="true" />
                 <element signature="e#5581#5582#0" expanded="true" />
-                <element signature="e#5633#5634#0" expanded="true" />
-                <element signature="e#5677#5678#0" expanded="true" />
+                <element signature="e#5631#5632#0" expanded="true" />
+                <element signature="e#5671#5672#0" expanded="true" />
+                <element signature="e#5708#5709#0" expanded="true" />
+                <element signature="e#5741#5742#0" expanded="true" />
+                <element signature="e#5793#5794#0" expanded="true" />
+                <element signature="e#5837#5838#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -78,30 +89,9 @@
       <file leaf-file-name="MooseDebug.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/MooseDebug.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="14" column="62" lean-forward="false" selection-start-line="14" selection-start-column="62" selection-end-line="14" selection-end-column="62" />
+            <state relative-caret-position="102">
+              <caret line="12" column="74" lean-forward="false" selection-start-line="12" selection-start-column="74" selection-end-line="12" selection-end-column="74" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainForm.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/views/Main/MainForm.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="70" column="48" lean-forward="false" selection-start-line="70" selection-start-column="48" selection-end-line="70" selection-end-column="48" />
-              <folding>
-                <element signature="e#1926#1927#0" expanded="true" />
-                <element signature="e#1959#1960#0" expanded="true" />
-                <element signature="e#2011#2012#0" expanded="true" />
-                <element signature="e#2055#2056#0" expanded="true" />
-                <element signature="e#2329#2330#0" expanded="true" />
-                <element signature="e#2366#2367#0" expanded="true" />
-                <element signature="e#2442#2443#0" expanded="true" />
-                <element signature="e#2494#2495#0" expanded="true" />
-                <element signature="e#3055#3056#0" expanded="true" />
-                <element signature="e#3088#3089#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -109,8 +99,8 @@
       <file leaf-file-name="MainController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/controllers/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="14" column="57" lean-forward="false" selection-start-line="14" selection-start-column="57" selection-end-line="14" selection-end-column="57" />
+            <state relative-caret-position="850">
+              <caret line="62" column="17" lean-forward="false" selection-start-line="62" selection-start-column="17" selection-end-line="62" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -118,59 +108,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TabElements.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/views/Main/TabElements.java">
+      <file leaf-file-name="MooseRunner.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/models/MooseRunner.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="32" lean-forward="false" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
+            <state relative-caret-position="176">
+              <caret line="32" column="36" lean-forward="false" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
               <folding>
-                <element signature="e#4967#4968#0" expanded="true" />
-                <element signature="e#4995#4996#0" expanded="true" />
-                <element signature="e#5037#5038#0" expanded="true" />
-                <element signature="e#5071#5072#0" expanded="true" />
-                <element signature="e#5107#5108#0" expanded="true" />
-                <element signature="e#5139#5140#0" expanded="true" />
-                <element signature="e#5189#5190#0" expanded="true" />
-                <element signature="e#5231#5232#0" expanded="true" />
-                <element signature="e#5281#5282#0" expanded="true" />
-                <element signature="e#5324#5325#0" expanded="true" />
-                <element signature="e#5514#5515#0" expanded="true" />
-                <element signature="e#5556#5557#0" expanded="true" />
-                <element signature="e#5735#5736#0" expanded="true" />
-                <element signature="e#5773#5774#0" expanded="true" />
-                <element signature="e#5835#5836#0" expanded="true" />
-                <element signature="e#5889#5890#0" expanded="true" />
-                <element signature="e#5937#5938#0" expanded="true" />
-                <element signature="e#5981#5982#0" expanded="true" />
-                <element signature="e#6177#6178#0" expanded="true" />
-                <element signature="e#6225#6226#0" expanded="true" />
-                <element signature="e#6441#6442#0" expanded="true" />
-                <element signature="e#6492#6493#0" expanded="true" />
-                <element signature="e#6704#6705#0" expanded="true" />
-                <element signature="e#6743#6744#0" expanded="true" />
-                <element signature="e#6807#6808#0" expanded="true" />
-                <element signature="e#6863#6864#0" expanded="true" />
-                <element signature="e#6914#6915#0" expanded="true" />
-                <element signature="e#6957#6958#0" expanded="true" />
-                <element signature="e#7148#7149#0" expanded="true" />
-                <element signature="e#7194#7195#0" expanded="true" />
-                <element signature="e#7393#7394#0" expanded="true" />
-                <element signature="e#7436#7437#0" expanded="true" />
-                <element signature="e#7635#7636#0" expanded="true" />
-                <element signature="e#7686#7687#0" expanded="true" />
-                <element signature="e#7901#7902#0" expanded="true" />
-                <element signature="e#7938#7939#0" expanded="true" />
-                <element signature="e#7999#8000#0" expanded="true" />
-                <element signature="e#8051#8052#0" expanded="true" />
-                <element signature="e#8092#8093#0" expanded="true" />
-                <element signature="e#8128#8129#0" expanded="true" />
-                <element signature="e#8187#8188#0" expanded="true" />
-                <element signature="e#8237#8238#0" expanded="true" />
-                <element signature="e#8278#8279#0" expanded="true" />
-                <element signature="e#8311#8312#0" expanded="true" />
-                <element signature="e#8367#8368#0" expanded="true" />
-                <element signature="e#8411#8412#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ConfigurationModel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/models/ConfigurationModel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-205">
+              <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -178,8 +133,35 @@
       <file leaf-file-name="LanguageChooserView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/views/LanguageChooser/LanguageChooserView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1139">
-              <caret line="72" column="6" lean-forward="false" selection-start-line="72" selection-start-column="6" selection-end-line="72" selection-end-column="6" />
+            <state relative-caret-position="126">
+              <caret line="28" column="38" lean-forward="false" selection-start-line="28" selection-start-column="38" selection-end-line="28" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LanguageChooserForm.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/views/LanguageChooser/LanguageChooserForm.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1347">
+              <caret line="134" column="17" lean-forward="false" selection-start-line="134" selection-start-column="17" selection-end-line="134" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LanguageChooserForm.form" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/views/LanguageChooser/LanguageChooserForm.form">
+          <provider selected="true" editor-type-id="ui-designer">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Language.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/utils/Language.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="160">
+              <caret line="56" column="61" lean-forward="false" selection-start-line="56" selection-start-column="61" selection-end-line="56" selection-end-column="61" />
               <folding />
             </state>
           </provider>
@@ -188,8 +170,8 @@
       <file leaf-file-name="LanguageChooserController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/controllers/LanguageChooserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="35" column="26" lean-forward="false" selection-start-line="30" selection-start-column="24" selection-end-line="35" selection-end-column="26" />
+            <state relative-caret-position="-435">
+              <caret line="17" column="14" lean-forward="false" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -229,6 +211,7 @@
       <find>getInsta</find>
       <find>jTextAreaSuggestions</find>
       <find>getIns</find>
+      <find>cambi</find>
     </findStrings>
     <replaceStrings>
       <replace>jMainFrame</replace>
@@ -659,7 +642,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/utils/Language.java" />
         <option value="$PROJECT_DIR$/moose-debug.properties" />
         <option value="$PROJECT_DIR$/src/main/java/views/LanguageChooser/LanguageChooserForm.form" />
         <option value="$PROJECT_DIR$/src/main/java/views/Main/fwefwef.java" />
@@ -676,11 +658,14 @@
         <option value="$PROJECT_DIR$/src/main/java/controllers/LanguageChooserController.java" />
         <option value="$PROJECT_DIR$/src/test/java/ConfigurationModelTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/views/Main/MainForm.form" />
-        <option value="$PROJECT_DIR$/src/main/java/views/Main/MainView.java" />
+        <option value="$PROJECT_DIR$/src/main/java/views/Main/MainForm.java" />
+        <option value="$PROJECT_DIR$/src/main/java/models/ProcessRunner.java" />
         <option value="$PROJECT_DIR$/src/main/java/MooseDebug.java" />
         <option value="$PROJECT_DIR$/src/main/java/controllers/MainController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/views/Main/MainForm.java" />
+        <option value="$PROJECT_DIR$/src/main/java/models/MooseRunner.java" />
         <option value="$PROJECT_DIR$/src/main/java/views/Main/TabElements.java" />
+        <option value="$PROJECT_DIR$/src/main/java/views/Main/MainView.java" />
+        <option value="$PROJECT_DIR$/src/main/java/utils/Language.java" />
       </list>
     </option>
   </component>
@@ -832,6 +817,22 @@
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="moose-debug" type="b2602c69:ProjectViewProjectNode" />
+              <item name="moose-debug" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="moose-debug" type="b2602c69:ProjectViewProjectNode" />
+              <item name="moose-debug" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="moose-debug" type="b2602c69:ProjectViewProjectNode" />
@@ -1161,7 +1162,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="0" width="1368" height="774" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3288889" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1170,9 +1170,9 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4677914" sideWeight="0.5030211" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32854986" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29800308" sideWeight="0.49697885" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29800308" sideWeight="0.49697885" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.49001536" sideWeight="0.49697885" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.49001536" sideWeight="0.49697885" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20619336" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1230,18 +1230,6 @@
     </buildFile>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/views/Main/HelloWorld.form" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/views/Main/MainForm_es_CO.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider editor-type-id="ResourceBundle">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/moose-debug_Thu_Mar_01_23-41-25_COT_2018.properties" />
     <entry file="file://$PROJECT_DIR$/moose-debug_Thu_Mar_01_23-40-15_COT_2018.xml" />
     <entry file="file://$PROJECT_DIR$/moose-debug_Fri_Mar_02_00-09-58_COT_2018.properties" />
     <entry file="file://$PROJECT_DIR$/moose-debug_Fri_Mar_02_00-09-58_COT_2018.xml" />
@@ -1445,11 +1433,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/views/LanguageChooser/LanguageChooserForm.form">
-      <provider selected="true" editor-type-id="ui-designer">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/views/Main/MainForm.form">
       <provider selected="true" editor-type-id="ui-designer">
         <state />
@@ -1463,136 +1446,168 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/MooseDebug.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="14" column="62" lean-forward="false" selection-start-line="14" selection-start-column="62" selection-end-line="14" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/views/LanguageChooser/LanguageChooserForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="894">
-          <caret line="131" column="37" lean-forward="false" selection-start-line="131" selection-start-column="37" selection-end-line="131" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/views/Main/MainView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2040">
-          <caret line="138" column="5" lean-forward="false" selection-start-line="138" selection-start-column="5" selection-end-line="138" selection-end-column="5" />
-          <folding>
-            <element signature="e#5390#5391#0" expanded="true" />
-            <element signature="e#5421#5422#0" expanded="true" />
-            <element signature="e#5471#5472#0" expanded="true" />
-            <element signature="e#5511#5512#0" expanded="true" />
-            <element signature="e#5548#5549#0" expanded="true" />
-            <element signature="e#5581#5582#0" expanded="true" />
-            <element signature="e#5633#5634#0" expanded="true" />
-            <element signature="e#5677#5678#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controllers/LanguageChooserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="35" column="26" lean-forward="false" selection-start-line="30" selection-start-column="24" selection-end-line="35" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/views/LanguageChooser/LanguageChooserView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1139">
-          <caret line="72" column="6" lean-forward="false" selection-start-line="72" selection-start-column="6" selection-end-line="72" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controllers/MainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="14" column="57" lean-forward="false" selection-start-line="14" selection-start-column="57" selection-end-line="14" selection-end-column="57" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/views/Main/MainForm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="70" column="48" lean-forward="false" selection-start-line="70" selection-start-column="48" selection-end-line="70" selection-end-column="48" />
+        <state relative-caret-position="51">
+          <caret line="41" column="16" lean-forward="false" selection-start-line="41" selection-start-column="16" selection-end-line="41" selection-end-column="16" />
           <folding>
-            <element signature="e#1926#1927#0" expanded="true" />
-            <element signature="e#1959#1960#0" expanded="true" />
-            <element signature="e#2011#2012#0" expanded="true" />
-            <element signature="e#2055#2056#0" expanded="true" />
-            <element signature="e#2329#2330#0" expanded="true" />
-            <element signature="e#2366#2367#0" expanded="true" />
-            <element signature="e#2442#2443#0" expanded="true" />
-            <element signature="e#2494#2495#0" expanded="true" />
-            <element signature="e#3055#3056#0" expanded="true" />
-            <element signature="e#3088#3089#0" expanded="true" />
+            <element signature="e#1926#1927#0" expanded="false" />
+            <element signature="e#1959#1960#0" expanded="false" />
+            <element signature="e#2011#2012#0" expanded="false" />
+            <element signature="e#2055#2056#0" expanded="false" />
+            <element signature="e#2329#2330#0" expanded="false" />
+            <element signature="e#2366#2367#0" expanded="false" />
+            <element signature="e#2442#2443#0" expanded="false" />
+            <element signature="e#2494#2495#0" expanded="false" />
+            <element signature="e#3055#3056#0" expanded="false" />
+            <element signature="e#3088#3089#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/views/Main/TabElements.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="32" lean-forward="false" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
+        <state relative-caret-position="1546">
+          <caret line="268" column="23" lean-forward="true" selection-start-line="268" selection-start-column="23" selection-end-line="268" selection-end-column="23" />
           <folding>
-            <element signature="e#4967#4968#0" expanded="true" />
-            <element signature="e#4995#4996#0" expanded="true" />
-            <element signature="e#5037#5038#0" expanded="true" />
-            <element signature="e#5071#5072#0" expanded="true" />
-            <element signature="e#5107#5108#0" expanded="true" />
-            <element signature="e#5139#5140#0" expanded="true" />
-            <element signature="e#5189#5190#0" expanded="true" />
-            <element signature="e#5231#5232#0" expanded="true" />
-            <element signature="e#5281#5282#0" expanded="true" />
-            <element signature="e#5324#5325#0" expanded="true" />
-            <element signature="e#5514#5515#0" expanded="true" />
-            <element signature="e#5556#5557#0" expanded="true" />
-            <element signature="e#5735#5736#0" expanded="true" />
-            <element signature="e#5773#5774#0" expanded="true" />
-            <element signature="e#5835#5836#0" expanded="true" />
-            <element signature="e#5889#5890#0" expanded="true" />
-            <element signature="e#5937#5938#0" expanded="true" />
-            <element signature="e#5981#5982#0" expanded="true" />
-            <element signature="e#6177#6178#0" expanded="true" />
-            <element signature="e#6225#6226#0" expanded="true" />
-            <element signature="e#6441#6442#0" expanded="true" />
-            <element signature="e#6492#6493#0" expanded="true" />
-            <element signature="e#6704#6705#0" expanded="true" />
-            <element signature="e#6743#6744#0" expanded="true" />
-            <element signature="e#6807#6808#0" expanded="true" />
-            <element signature="e#6863#6864#0" expanded="true" />
-            <element signature="e#6914#6915#0" expanded="true" />
-            <element signature="e#6957#6958#0" expanded="true" />
-            <element signature="e#7148#7149#0" expanded="true" />
-            <element signature="e#7194#7195#0" expanded="true" />
-            <element signature="e#7393#7394#0" expanded="true" />
-            <element signature="e#7436#7437#0" expanded="true" />
-            <element signature="e#7635#7636#0" expanded="true" />
-            <element signature="e#7686#7687#0" expanded="true" />
-            <element signature="e#7901#7902#0" expanded="true" />
-            <element signature="e#7938#7939#0" expanded="true" />
-            <element signature="e#7999#8000#0" expanded="true" />
-            <element signature="e#8051#8052#0" expanded="true" />
-            <element signature="e#8092#8093#0" expanded="true" />
-            <element signature="e#8128#8129#0" expanded="true" />
-            <element signature="e#8187#8188#0" expanded="true" />
-            <element signature="e#8237#8238#0" expanded="true" />
-            <element signature="e#8278#8279#0" expanded="true" />
-            <element signature="e#8311#8312#0" expanded="true" />
-            <element signature="e#8367#8368#0" expanded="true" />
-            <element signature="e#8411#8412#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#5119#5120#0" expanded="false" />
+            <element signature="e#5147#5148#0" expanded="false" />
+            <element signature="e#5189#5190#0" expanded="false" />
+            <element signature="e#5223#5224#0" expanded="false" />
+            <element signature="e#5259#5260#0" expanded="false" />
+            <element signature="e#5291#5292#0" expanded="false" />
+            <element signature="e#5341#5342#0" expanded="false" />
+            <element signature="e#5383#5384#0" expanded="false" />
+            <element signature="e#5433#5434#0" expanded="false" />
+            <element signature="e#5476#5477#0" expanded="false" />
+            <element signature="e#5666#5667#0" expanded="false" />
+            <element signature="e#5708#5709#0" expanded="false" />
+            <element signature="e#5887#5888#0" expanded="false" />
+            <element signature="e#5925#5926#0" expanded="false" />
+            <element signature="e#5987#5988#0" expanded="false" />
+            <element signature="e#6041#6042#0" expanded="false" />
+            <element signature="e#6089#6090#0" expanded="false" />
+            <element signature="e#6133#6134#0" expanded="false" />
+            <element signature="e#6329#6330#0" expanded="false" />
+            <element signature="e#6377#6378#0" expanded="false" />
+            <element signature="e#6593#6594#0" expanded="false" />
+            <element signature="e#6644#6645#0" expanded="false" />
+            <element signature="e#6856#6857#0" expanded="false" />
+            <element signature="e#6895#6896#0" expanded="false" />
+            <element signature="e#6959#6960#0" expanded="false" />
+            <element signature="e#7015#7016#0" expanded="false" />
+            <element signature="e#7066#7067#0" expanded="false" />
+            <element signature="e#7109#7110#0" expanded="false" />
+            <element signature="e#7300#7301#0" expanded="false" />
+            <element signature="e#7346#7347#0" expanded="false" />
+            <element signature="e#7545#7546#0" expanded="false" />
+            <element signature="e#7588#7589#0" expanded="false" />
+            <element signature="e#7787#7788#0" expanded="false" />
+            <element signature="e#7838#7839#0" expanded="false" />
+            <element signature="e#8053#8054#0" expanded="false" />
+            <element signature="e#8090#8091#0" expanded="false" />
+            <element signature="e#8151#8152#0" expanded="false" />
+            <element signature="e#8203#8204#0" expanded="false" />
+            <element signature="e#8244#8245#0" expanded="false" />
+            <element signature="e#8280#8281#0" expanded="false" />
+            <element signature="e#8339#8340#0" expanded="false" />
+            <element signature="e#8389#8390#0" expanded="false" />
+            <element signature="e#8430#8431#0" expanded="false" />
+            <element signature="e#8463#8464#0" expanded="false" />
+            <element signature="e#8519#8520#0" expanded="false" />
+            <element signature="e#8563#8564#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/models/MooseRunner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="32" column="36" lean-forward="false" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/MooseDebug.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="12" column="74" lean-forward="false" selection-start-line="12" selection-start-column="74" selection-end-line="12" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/views/Main/MainView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="117" column="55" lean-forward="false" selection-start-line="117" selection-start-column="55" selection-end-line="117" selection-end-column="55" />
+          <folding>
+            <element signature="e#5550#5551#0" expanded="true" />
+            <element signature="e#5581#5582#0" expanded="true" />
+            <element signature="e#5631#5632#0" expanded="true" />
+            <element signature="e#5671#5672#0" expanded="true" />
+            <element signature="e#5708#5709#0" expanded="true" />
+            <element signature="e#5741#5742#0" expanded="true" />
+            <element signature="e#5793#5794#0" expanded="true" />
+            <element signature="e#5837#5838#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/models/ConfigurationModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-205">
+          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/views/LanguageChooser/LanguageChooserView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="28" column="38" lean-forward="false" selection-start-line="28" selection-start-column="38" selection-end-line="28" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controllers/LanguageChooserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-435">
+          <caret line="17" column="14" lean-forward="false" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controllers/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="850">
+          <caret line="62" column="17" lean-forward="false" selection-start-line="62" selection-start-column="17" selection-end-line="62" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/views/LanguageChooser/LanguageChooserForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1347">
+          <caret line="134" column="17" lean-forward="false" selection-start-line="134" selection-start-column="17" selection-end-line="134" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/views/LanguageChooser/LanguageChooserForm.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/utils/Language.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="56" column="61" lean-forward="false" selection-start-line="56" selection-start-column="61" selection-end-line="56" selection-end-column="61" />
+          <folding />
         </state>
       </provider>
     </entry>
