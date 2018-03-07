@@ -11,17 +11,22 @@ import java.awt.event.ActionListener;
 import java.util.Observable;
 
 public class MainView extends View {
+    // Singleton
+    private static final MainView INSTANCE = new MainView();
+
     //Components
     private JFrame jMainFrame;
+
     private MainForm mainForm;
 
     //Menu buttons declarations
-    private JMenuItem languageJMenuItem;
+    private JMenuItem jMenuItemLanguage;
 
     //Action commands
-    //public static final String
+    public static final String J_MENU_ITEM_LANGUAGE_COMMAND = "jMenuItemLanguage";
 
     public MainView () {
+
         jMainFrame = new JFrame();
         mainForm = new MainForm();
         jMainFrame.setContentPane(mainForm.getjPanelMain());
@@ -29,7 +34,6 @@ public class MainView extends View {
         initFormContent();
         jMainFrame.setMinimumSize(new Dimension(600,400));
         jMainFrame.setLocationRelativeTo(null);
-        jMainFrame.setVisible(true);
     }
 
     private void addMenuToMainForm (){
@@ -38,37 +42,37 @@ public class MainView extends View {
         JMenuBar jMenuBarMainForm = new JMenuBar();
         JMenu jMenuFile = new JMenu(Language.getResource().getString("jMenuFile"));
         jMenuFile.setMnemonic(KeyStroke.getKeyStroke(Language.getResource().getString("jMenuFileMnemotecnic")).getKeyCode());
-        JMenu newJMenuItem = new JMenu(Language.getResource().getString("newJMenuItem"));
-        newJMenuItem.setMnemonic(KeyStroke.getKeyStroke(Language.getResource().getString("newJMenuItemMnemotecnic")).getKeyCode());
-        JMenuItem mooseInstanceJMenuItem = new JMenuItem(Language.getResource().getString("mooseInstanceJMenuItem"));
-        mooseInstanceJMenuItem.setMnemonic(KeyStroke.getKeyStroke(Language.getResource().getString("mooseInstanceJMenuItemMnemotecnic")).getKeyCode());
-        JMenuItem exitMenuItem = new JMenuItem(Language.getResource().getString("exitMenuItem"));
-        exitMenuItem.setMnemonic(KeyStroke.getKeyStroke(Language.getResource().getString("exitMenuItemMnemotecnic")).getKeyCode());
-        JMenu editJMenu = new JMenu(Language.getResource().getString("editJMenu"));
-        editJMenu.setMnemonic(KeyStroke.getKeyStroke(Language.getResource().getString("editJMenuMnemotecnic")).getKeyCode());
-        JMenuItem copyOutputJMenuItem = new JMenuItem(Language.getResource().getString("copyOutputJMenuItem"));
-        copyOutputJMenuItem.setMnemonic(KeyStroke.getKeyStroke(Language.getResource().getString("copyOutputJMenuItemMnemotecnic")).getKeyCode());
-        JMenu preferencesJMenu = new JMenu(Language.getResource().getString("preferencesJMenu"));
-        preferencesJMenu.setMnemonic(KeyStroke.getKeyStroke(Language.getResource().getString("preferencesJMenuMnemotecnic")).getKeyCode());
-        languageJMenuItem = new JMenuItem(Language.getResource().getString("languageJMenuItem"));
-        languageJMenuItem.setMnemonic(KeyStroke.getKeyStroke(Language.getResource().getString("languageJMenuItemMnemotecnic")).getKeyCode());
-        //languageJMenuItem.setActionCommand();
-        JMenu helpJMenu = new JMenu(Language.getResource().getString("helpJMenu"));
-        helpJMenu.setMnemonic(KeyStroke.getKeyStroke(Language.getResource().getString("helpJMenuMnemotecnic")).getKeyCode());
-        JMenuItem aboutJMenuItem = new JMenuItem(Language.getResource().getString("aboutJMenuItem"));
-        aboutJMenuItem.setMnemonic(KeyStroke.getKeyStroke(Language.getResource().getString("aboutJMenuItemMnemotecnic")).getKeyCode());
+        JMenu jMenuNew = new JMenu(Language.getResource().getString("jMenuNew"));
+        jMenuNew.setMnemonic(KeyStroke.getKeyStroke(Language.getResource().getString("jMenuNewMnemotecnic")).getKeyCode());
+        JMenuItem jMenuItemMooseInstance = new JMenuItem(Language.getResource().getString("jMenuItemMooseInstance"));
+        jMenuItemMooseInstance.setMnemonic(KeyStroke.getKeyStroke(Language.getResource().getString("jMenuItemMooseInstanceMnemotecnic")).getKeyCode());
+        JMenuItem jMenuItemExit = new JMenuItem(Language.getResource().getString("jMenuItemExit"));
+        jMenuItemExit.setMnemonic(KeyStroke.getKeyStroke(Language.getResource().getString("jMenuItemExitMnemotecnic")).getKeyCode());
+        JMenu jMenuEdit = new JMenu(Language.getResource().getString("jMenuEdit"));
+        jMenuEdit.setMnemonic(KeyStroke.getKeyStroke(Language.getResource().getString("jMenuEditMnemotecnic")).getKeyCode());
+        JMenuItem jMenuItemCopyOutput = new JMenuItem(Language.getResource().getString("jMenuItemCopyOutput"));
+        jMenuItemCopyOutput.setMnemonic(KeyStroke.getKeyStroke(Language.getResource().getString("jMenuItemCopyOutputMnemotecnic")).getKeyCode());
+        JMenu jMenuPreferences = new JMenu(Language.getResource().getString("jMenuPreferences"));
+        jMenuPreferences.setMnemonic(KeyStroke.getKeyStroke(Language.getResource().getString("jMenuPreferencesMnemotecnic")).getKeyCode());
+        jMenuItemLanguage = new JMenuItem(Language.getResource().getString("jMenuItemLanguage"));
+        jMenuItemLanguage.setMnemonic(KeyStroke.getKeyStroke(Language.getResource().getString("jMenuItemLanguageMnemotecnic")).getKeyCode());
+        jMenuItemLanguage.setActionCommand(J_MENU_ITEM_LANGUAGE_COMMAND);
+        JMenu jMenuHelp = new JMenu(Language.getResource().getString("jMenuHelp"));
+        jMenuHelp.setMnemonic(KeyStroke.getKeyStroke(Language.getResource().getString("jMenuHelpMnemotecnic")).getKeyCode());
+        JMenuItem jMenuItemAbout = new JMenuItem(Language.getResource().getString("jMenuItemAbout"));
+        jMenuItemAbout.setMnemonic(KeyStroke.getKeyStroke(Language.getResource().getString("jMenuItemAboutMnemotecnic")).getKeyCode());
 
         //Adding elements to mainFormJMenuBar
-        helpJMenu.add(aboutJMenuItem);
-        editJMenu.add(copyOutputJMenuItem);
-        preferencesJMenu.add(languageJMenuItem);
-        editJMenu.add(preferencesJMenu);
-        newJMenuItem.add(mooseInstanceJMenuItem);
-        jMenuFile.add(newJMenuItem);
-        jMenuFile.add(exitMenuItem);
+        jMenuHelp.add(jMenuItemAbout);
+        jMenuEdit.add(jMenuItemCopyOutput);
+        jMenuPreferences.add(jMenuItemLanguage);
+        jMenuEdit.add(jMenuPreferences);
+        jMenuNew.add(jMenuItemMooseInstance);
+        jMenuFile.add(jMenuNew);
+        jMenuFile.add(jMenuItemExit);
         jMenuBarMainForm.add(jMenuFile);
-        jMenuBarMainForm.add(editJMenu);
-        jMenuBarMainForm.add(helpJMenu);
+        jMenuBarMainForm.add(jMenuEdit);
+        jMenuBarMainForm.add(jMenuHelp);
 
         //Adding mainFormJMenuBar to mainForm
         jMainFrame.setJMenuBar(jMenuBarMainForm);
@@ -81,24 +85,30 @@ public class MainView extends View {
         Language.setResource(MainForm.class.getName());
         jMainFrame.setTitle(Language.getResource().getString("FormTitle"));
         addMenuToMainForm();
-        configureEvents();
-
+        //configureEvents();
     }
 
-    private void configureEvents() {
+    /*private void configureEvents() {
 
         // Programing what actions listeners will do
 
         //Action Menu -> Edit -> Preferences -> Language
-        ActionListener languageJMenuItemActionListener = actionEvent -> {
+        ActionListener jMenuItemLanguageActionListener = actionEvent -> {
             LanguageChooserView.getInstance().getLanguageChooserJDialog().setVisible(true);
         };
 
         // Set action listeners to their respective gui components
-        languageJMenuItem.addActionListener(languageJMenuItemActionListener);
+        jMenuItemLanguage.addActionListener(jMenuItemLanguageActionListener);
+    }*/
+
+    /**
+     * Singleton.
+     *
+     * @return this
+     */
+    public static MainView getInstance() {
+        return INSTANCE;
     }
-
-
 
     @Override
     public void update(Observable observable, Object o) {
@@ -108,6 +118,23 @@ public class MainView extends View {
 
     @Override
     public void addController(Controller controller) {
+        jMenuItemLanguage.addActionListener(controller);
+        mainForm.addController(controller);
+    }
 
+    public MainForm getMainForm() {
+        return mainForm;
+    }
+
+    public void setMainForm(MainForm mainForm) {
+        this.mainForm = mainForm;
+    }
+
+    public JFrame getjMainFrame() {
+        return jMainFrame;
+    }
+
+    public void setjMainFrame(JFrame jMainFrame) {
+        this.jMainFrame = jMainFrame;
     }
 }

@@ -1,18 +1,34 @@
 package views.Main;
 
+import abstracts.MVC.Controller;
+
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 public class MainForm {
     private JPanel jPanelMain;
+
     private JTabbedPane tabbedPane;
+
+    private TabElements tabElementsTemplate;
+
+    private Controller controller;
+
+    //Array list of tabs
+    private ArrayList<TabElements> tabbedPaneTabs;
 
     public MainForm() {
         //this.$$$setupUI$$$();
-        initForm();
+        try {
+            initForm();
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+        }
     }
 
-    private void initForm() {
+    private void initForm() throws CloneNotSupportedException {
         jPanelMain = new JPanel();
         jPanelMain.setLayout(new GridBagLayout());
         GridBagConstraints constraints = new GridBagConstraints();
@@ -20,103 +36,25 @@ public class MainForm {
         constraints.weighty = 1.0;
         constraints.fill = GridBagConstraints.BOTH;
         tabbedPane = new JTabbedPane();
-        tabbedPane.addTab("Instancia 1", makeTextPaned());
+        tabbedPaneTabs = new ArrayList<>();
+        TabElements tabElements1 = new TabElements();
+        TabElements tabElements2 = new TabElements();
+        TabElements tabElements3 = new TabElements();
+        tabElements1.setTabId("Instancia 1");
+        tabElements2.setTabId("Instancia 2");
+        tabElements3.setTabId("Instancia 3");
+        System.out.println(tabElements1.getTabId());
+        System.out.println(tabElements2.getTabId());
+        tabbedPane.addTab("Instancia 1", tabElements1.getMainPanel());
+        tabbedPane.addTab("Instancia 2", tabElements2.getMainPanel());
+        tabbedPane.addTab("Instancia 3", tabElements3.getMainPanel());
+        tabbedPaneTabs.add(tabElements1);
+        tabbedPaneTabs.add(tabElements2);
+        tabbedPaneTabs.add(tabElements3);
+        //tabbedPane.remove(1);
+        tabbedPane.getSelectedIndex();
+
         jPanelMain.add(tabbedPane, constraints);
-    }
-
-    private Component makeTextPaned() {
-        JPanel mainPanel = new JPanel();
-        mainPanel.setLayout(new GridBagLayout());
-        GridBagConstraints constraints = new GridBagConstraints();
-        constraints.fill = GridBagConstraints.BOTH;
-
-
-        //Left side of the board
-        JTextArea jTextAreaMooseOutput = new JTextArea();
-        jTextAreaMooseOutput.setEditable(false);
-        JScrollPane jScrollPaneLeftSide = new JScrollPane(jTextAreaMooseOutput);
-
-        //Right side of the board
-        JPanel jPanelRightSide = new JPanel();
-        jPanelRightSide.setLayout(new GridBagLayout());
-
-        constraints.gridy = 0;//First row
-
-        JLabel jLabelMooseExecutable = new JLabel();
-        jLabelMooseExecutable.setText("Executable path");
-        constraints.weightx=1.0;
-        constraints.gridx = 0;
-        jPanelRightSide.add(jLabelMooseExecutable, constraints);
-
-        JTextField jTextFieldMooseExecutable = new JTextField();
-        jTextFieldMooseExecutable.setText("HOLA MUNDO");
-        constraints.gridx = 1;
-        jPanelRightSide.add(jTextFieldMooseExecutable, constraints);
-
-        JButton jButtonSearchMooseExecutable = new JButton("Buscar");
-        constraints.gridx = 2;
-        jPanelRightSide.add(jButtonSearchMooseExecutable, constraints);
-
-
-        constraints.gridy = 1;//Second row
-
-        JLabel jLabelMooseImage = new JLabel();
-        jLabelMooseImage.setText("Image path");
-        constraints.weightx = 0.5;
-        constraints.gridx = 0;
-        jPanelRightSide.add(jLabelMooseImage, constraints);
-
-        JTextField jTextFieldMooseImage = new JTextField();
-        constraints.gridx = 1;
-        jPanelRightSide.add(jTextFieldMooseImage, constraints);
-
-        JButton jButtonSearchMooseImage = new JButton("Buscar");
-        constraints.gridx = 2;
-        jPanelRightSide.add(jButtonSearchMooseImage, constraints);
-
-
-        constraints.gridy = 2;//Third row
-
-        constraints.weightx=1.0;
-        constraints.weighty=1.0;
-        JTextArea jTextAreaSuggestions = new JTextArea();
-        jTextAreaSuggestions.setEditable(false);
-        JScrollPane jScrollPaneJLabelSuggestions = new JScrollPane(jTextAreaSuggestions);
-        constraints.weightx  = 0.0;
-        constraints.gridx = 0;
-        constraints.gridwidth=3;//# of columns to fill
-        constraints.ipady = 200;
-        jPanelRightSide.add(jScrollPaneJLabelSuggestions,constraints);
-
-        constraints.gridy = 3;//Fourth row
-
-        JButton jButtonRunStop = new JButton("Run - Stop");
-        constraints.ipady = 0;
-        constraints.gridx= 1;
-        constraints.gridwidth=-3;
-        constraints.weightx  = 0.5;
-        constraints.weighty=0.0;
-        jPanelRightSide.add(jButtonRunStop,constraints);
-
-        JButton jButtonDelete = new JButton("Delete");
-        constraints.ipady = 0;
-        constraints.gridx= 2;
-        jPanelRightSide.add(jButtonDelete,constraints);
-
-
-        //Grouping all components
-        JSplitPane jSplitPane = new JSplitPane(
-                JSplitPane.HORIZONTAL_SPLIT,
-                jScrollPaneLeftSide,
-                jPanelRightSide
-        );
-        jSplitPane.setDividerLocation(300);
-        constraints.weightx=1.0;
-        constraints.weighty=1.0;
-
-        //Add JSplitPane to final mainPanel
-        mainPanel.add(jSplitPane,constraints);
-        return mainPanel;
     }
 
     public JPanel getjPanelMain() {
@@ -127,8 +65,19 @@ public class MainForm {
         this.jPanelMain = jPanelMain;
     }
 
-    public void addController () {
+    public void addController (Controller controller) {
+        this.controller = controller;
+        for (TabElements tabElements: tabbedPaneTabs){
+            tabElements.addController(controller);
+        }
+    }
 
+    public ArrayList<TabElements> getTabbedPaneTabs() {
+        return tabbedPaneTabs;
+    }
+
+    public void setTabbedPaneTabs(ArrayList<TabElements> tabbedPaneTabs) {
+        this.tabbedPaneTabs = tabbedPaneTabs;
     }
 
     {
