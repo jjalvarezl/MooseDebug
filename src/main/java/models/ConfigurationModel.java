@@ -1,6 +1,7 @@
 package models;
 
 import abstracts.MVC.Model;
+import utils.DataRetrieving;
 
 import java.util.prefs.Preferences;
 
@@ -24,8 +25,14 @@ public class ConfigurationModel extends Model {
     private Preferences preferences;
 
     private ConfigurationModel() {
+        super();
         setPreferences(Preferences.userNodeForPackage(ConfigurationModel.class));
         System.out.println("Node's absolute path: "+getPreferences().absolutePath());
+    }
+
+    @Override
+    public DataRetrieving retrieveData() {
+        return null;
     }
 
     public static ConfigurationModel getInstance() {

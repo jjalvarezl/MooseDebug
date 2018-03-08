@@ -89,6 +89,8 @@ public class TabElements {
         constraints.weighty=1.0;
         setjTextAreaSuggestions(new JTextArea());
         getjTextAreaSuggestions().setEditable(false);
+        getjTextAreaSuggestions().setLineWrap(true);
+        getjTextAreaSuggestions().setWrapStyleWord(true);
         setjScrollPaneJLabelSuggestions(new JScrollPane(getjTextAreaSuggestions()));
         constraints.weightx  = 0.0;
         constraints.gridx = 0;

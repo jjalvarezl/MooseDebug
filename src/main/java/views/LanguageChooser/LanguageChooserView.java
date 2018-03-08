@@ -17,6 +17,7 @@ public class LanguageChooserView extends View {
     private HashMap<Integer, String[]> languagesCountriesMap;
 
     private LanguageChooserView (){
+        super();
         languageChooserJDialog = new JDialog();
         languageChooserForm = new LanguageChooserForm();
 

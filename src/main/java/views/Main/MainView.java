@@ -1,13 +1,16 @@
 package views.Main;
 
 import abstracts.MVC.Controller;
+import abstracts.MVC.Model;
 import abstracts.MVC.View;
+import utils.DataRetrieving;
 import utils.Language;
 import views.LanguageChooser.LanguageChooserView;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.Observable;
 
 public class MainView extends View {
@@ -26,7 +29,7 @@ public class MainView extends View {
     public static final String J_MENU_ITEM_LANGUAGE_COMMAND = "jMenuItemLanguage";
 
     public MainView () {
-
+        super();
         jMainFrame = new JFrame();
         mainForm = new MainForm();
         jMainFrame.setContentPane(mainForm.getjPanelMain());
@@ -112,8 +115,22 @@ public class MainView extends View {
 
     @Override
     public void update(Observable observable, Object o) {
-        if (o != null){
-            mainForm.getTabbedPaneTabs().get(0).getjTextAreaMooseOutput().append(((String) o)+"\n");
+        Model model = models.get(models.indexOf(observable));
+        DataRetrieving dataRetrieving = model.retrieveData();
+        if (dataRetrieving != null){
+            /*if (((String) o).startsWith("pthread_setschedparam failed")){
+                Language.setResource(MainForm.class.getName());
+                mainForm.getTabbedPaneTabs().get(0).getjTextAreaSuggestions().append(
+                        Language.getResource().getString("pthreadSetschedparamFailed")
+                );
+            }
+            models.indexOf(observable);*/
+            mainForm.getTabbedPaneTabs().get(0).getjTextAreaSuggestions().append(
+                    dataRetrieving.getMooseSuggestion()
+            );
+            mainForm.getTabbedPaneTabs().get(0).getjTextAreaMooseOutput().append(
+                    dataRetrieving.getMooseOutput()
+            );
         } else {
             System.out.println("Update from MainView");
             initFormContent();

@@ -1,8 +1,7 @@
 package controllers;
 
 import abstracts.MVC.Controller;
-import models.ConfigurationModel;
-import models.MooseRunner;
+import models.MooseRunnerModel;
 import views.LanguageChooser.LanguageChooserView;
 import views.Main.MainView;
 import views.Main.TabElements;
@@ -29,12 +28,12 @@ public class MainController extends Controller {
                             case TabElements.J_BUTTON_DELETE_COMMAND:
                                 break;
                             case TabElements.J_BUTTON_RUN_STOP_COMMAND:
-                                MooseRunner mr = new MooseRunner(
+                                MooseRunnerModel mrm = new MooseRunnerModel(
                                         tabElements.getjTextFieldMooseExecutable().getText(),
                                         tabElements.getjTextFieldMooseImage().getText()
                                 );
-                                MainView.getInstance().addModel(mr);
-                                Thread thread = new Thread(mr);
+                                MainView.getInstance().addModel(mrm);
+                                Thread thread = new Thread(mrm);
                                 thread.start();
                                 break;
                             case TabElements.J_BUTTON_SEARCH_MOOSE_EXECUTABLE_COMMAND:
