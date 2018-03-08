@@ -3,30 +3,96 @@ package models;
 import abstracts.MVC.Model;
 import utils.DataRetrieving;
 import utils.Language;
+import views.Main.MainForm;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 
 public class MooseRunnerModel extends Model implements Runnable{
 
     String[] commands;
 
-    public MooseRunnerModel (String mooseExecPath, String mooseImagePath){
+    public MooseRunnerModel (String tabId, String mooseExecPath, String mooseImagePath){
         super();
+        dataRetrieving.setTabId(tabId);
         commands = new String[]{mooseExecPath, mooseImagePath};
     }
 
     private void suggestionConstructor (String mooseOutput){
         String suggestions = dataRetrieving.getMooseSuggestion();
-        suggestions += (mooseOutput.startsWith("pthread_setschedparam failed")) ? Language.getResource().getString("pthreadSetschedparamFailed"):"";
-        dataRetrieving.appendMooseSuggestion(suggestions);
+        Language.setResource(MainForm.class.getName());
+        suggestions += (mooseOutput.startsWith("pthread_setschedparam failed")) ? Language.getResource().getString("pthreadSetschedparamFailed")+"\n\n":"";
+        suggestions += (mooseOutput.startsWith("Error. Could not determine platform's libc path for VM.")) ? Language.getResource().getString("libcMissed")+"\n\n":"";
+        suggestions += (mooseOutput.startsWith("could not find display driver vm-display-x11")) ? Language.getResource().getString("vmDisplayX11DisplayDriverMissed")+"\n\n" : "";
+        System.out.println("SUGGESTIONS: "+suggestions);
+        System.out.println("LINE READED: "+mooseOutput);
+        dataRetrieving.setMooseSuggestion(suggestions);
+        if (mooseOutput.startsWith(" - check that ")){
+            StringTokenizer st = new StringTokenizer(mooseOutput, " ");
+            String myPath="";
+            int counter=0;
+            while (st.hasMoreElements()) {
+                String current = ((String) st.nextElement());
+                counter++;
+                if (counter == 4){
+                    myPath = current;
+                }
+            }
+            System.out.println ("myPath: "+myPath);
+            processCommand(new String[]{"ldd", myPath});
+        }
     }
 
     @Override
     public void run() {
+        processCommand(commands);
+        setChanged();
+        notifyObservers();
+    }
+
+    private void processCommand (String[] commands){
+        System.out.println("Comando: "+commands[0]+" "+commands[1]);
+        String[] stdErrorOutputs = executeCommand(commands);
+        if (commands[0].equals("ldd")){
+            System.out.println("LDD output: "+stdErrorOutputs[0]);
+            dataRetrieving.appendMooseSuggestion(stdErrorOutputs[0]);
+        } else {
+            //Processing standard output
+            dataRetrieving.appendMooseOutput("***Standard Output***\n\n");
+            boolean flagStandardOutput = true;
+            StringTokenizer st = new StringTokenizer(stdErrorOutputs[0], "\n");
+            while (st.hasMoreElements()) {
+                suggestionConstructor((String) st.nextElement());
+                flagStandardOutput = false;
+            }
+            if (flagStandardOutput) { dataRetrieving.appendMooseOutput("No output retrieved"); }
+
+            //Processing error output
+            boolean flagErrorOutput = true;
+            dataRetrieving.appendMooseOutput("\n\n***Standard Error***\n\n");
+            st = new StringTokenizer(stdErrorOutputs[1], "\n");
+            while (st.hasMoreElements()) {
+                suggestionConstructor((String) st.nextElement());
+                flagErrorOutput = false;
+            }
+            if (flagErrorOutput) { dataRetrieving.appendMooseOutput("No output retrieved"); }
+
+            if (flagErrorOutput && flagStandardOutput){
+                dataRetrieving.appendMooseSuggestion("Everything worked fine :).");
+            }
+        }
+
+        System.out.println("Moose Output: "+dataRetrieving.getMooseOutput());
+        System.out.println("Moose Suggestion: "+dataRetrieving.getMooseSuggestion());
+    }
+
+    private String[] executeCommand (String[] commands){
         Runtime rt = Runtime.getRuntime();
         Process proc;
+        String[] stdErrorOutputs = new String[2];
+
         try {
             proc = rt.exec(commands);
             BufferedReader stdInput = new BufferedReader(new
@@ -35,37 +101,21 @@ public class MooseRunnerModel extends Model implements Runnable{
             BufferedReader stdError = new BufferedReader(new
                     InputStreamReader(proc.getErrorStream()));
 
-            // read the output from the command
-            System.out.println("Here is the standard output of the command:\n");
             String s;
-            dataRetrieving.appendMooseOutput("***Standard Output***\n\n");
-            boolean flag = true;
+            stdErrorOutputs[0] = "";
+            stdErrorOutputs[1] = "";
             while ((s = stdInput.readLine()) != null) {
-                System.out.println(s);
-                suggestionConstructor(s);
-                dataRetrieving.setMooseOutput(s+"\n");
-                flag = false;
+                stdErrorOutputs[0] += s+"\n";
             }
-            if (flag)
-                { dataRetrieving.appendMooseOutput("No output retrieved"); }
-            else
-                { flag = true; }
 
-            // read any errors from the attempted command
-            System.out.println("Here is the standard error of the command (if any):\n");
-            dataRetrieving.appendMooseOutput("\n\n***Standard Error***\n\n");
             while ((s = stdError.readLine()) != null) {
-                System.out.println(s);
-                suggestionConstructor(s);
-                dataRetrieving.setMooseOutput(s+"\n");
-                flag = false;
+                stdErrorOutputs[1] += s+"\n";
             }
-            if (flag)
-                { dataRetrieving.appendMooseOutput("No error retrieved"); }
-            setChanged();
-            notifyObservers();
+
         } catch (IOException e) {
             e.printStackTrace();
         }
+        System.out.println("executeCommand Outputs INIT:\n\n--"+stdErrorOutputs[0]+"\n\n"+stdErrorOutputs[1]+"--executeCommand Outputs ENDING");
+        return stdErrorOutputs;
     }
 }

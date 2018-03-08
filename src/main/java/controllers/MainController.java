@@ -29,6 +29,7 @@ public class MainController extends Controller {
                                 break;
                             case TabElements.J_BUTTON_RUN_STOP_COMMAND:
                                 MooseRunnerModel mrm = new MooseRunnerModel(
+                                        tabElements.getTabId(),
                                         tabElements.getjTextFieldMooseExecutable().getText(),
                                         tabElements.getjTextFieldMooseImage().getText()
                                 );

@@ -84,25 +84,11 @@ public class MainView extends View {
         jMainFrame.repaint();
     }
 
-    private void initFormContent(){
+    private void initFormContent() {
         Language.setResource(MainForm.class.getName());
         jMainFrame.setTitle(Language.getResource().getString("FormTitle"));
         addMenuToMainForm();
-        //configureEvents();
     }
-
-    /*private void configureEvents() {
-
-        // Programing what actions listeners will do
-
-        //Action Menu -> Edit -> Preferences -> Language
-        ActionListener jMenuItemLanguageActionListener = actionEvent -> {
-            LanguageChooserView.getInstance().getLanguageChooserJDialog().setVisible(true);
-        };
-
-        // Set action listeners to their respective gui components
-        jMenuItemLanguage.addActionListener(jMenuItemLanguageActionListener);
-    }*/
 
     /**
      * Singleton.
@@ -118,17 +104,11 @@ public class MainView extends View {
         Model model = models.get(models.indexOf(observable));
         DataRetrieving dataRetrieving = model.retrieveData();
         if (dataRetrieving != null){
-            /*if (((String) o).startsWith("pthread_setschedparam failed")){
-                Language.setResource(MainForm.class.getName());
-                mainForm.getTabbedPaneTabs().get(0).getjTextAreaSuggestions().append(
-                        Language.getResource().getString("pthreadSetschedparamFailed")
-                );
-            }
-            models.indexOf(observable);*/
-            mainForm.getTabbedPaneTabs().get(0).getjTextAreaSuggestions().append(
+            int index = getIndexByTabId(dataRetrieving.getTabId());
+            mainForm.getTabbedPaneTabs().get(index).getjTextAreaSuggestions().append(
                     dataRetrieving.getMooseSuggestion()
             );
-            mainForm.getTabbedPaneTabs().get(0).getjTextAreaMooseOutput().append(
+            mainForm.getTabbedPaneTabs().get(index).getjTextAreaMooseOutput().append(
                     dataRetrieving.getMooseOutput()
             );
         } else {
@@ -141,6 +121,15 @@ public class MainView extends View {
     public void addController(Controller controller) {
         jMenuItemLanguage.addActionListener(controller);
         mainForm.addController(controller);
+    }
+
+    public int getIndexByTabId(String tabId){
+        for (TabElements te: mainForm.getTabbedPaneTabs()){
+            if (te.getTabId().equals(tabId)){
+                return mainForm.getTabbedPaneTabs().indexOf(te);
+            }
+        }
+        return -1;
     }
 
     public MainForm getMainForm() {

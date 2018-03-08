@@ -32,7 +32,7 @@ public class Language {
      */
     public static void setResource (String guiClassName) {
         if (locale == null){
-            locale = Locale.getDefault();
+            locale = new Locale("en", "US");
         }
         Language.getInstance().rb = ResourceBundle.getBundle(guiClassName, locale);
     }
@@ -47,7 +47,7 @@ public class Language {
 
     public static boolean setLanguage (String idiom, String country){
         boolean isLocaleSaved = !(idiom.equals(ConfigurationModel.NOT_FOUNDED_STRING) || country.equals(ConfigurationModel.NOT_FOUNDED_STRING));
-        locale = isLocaleSaved ? new Locale(idiom, country) : Locale.getDefault();
+        locale = isLocaleSaved ? new Locale(idiom, country) : new Locale("en", "US");
 
         // Saving configuration.
         ConfigurationModel.putString(ConfigurationModel.IDIOM, idiom);

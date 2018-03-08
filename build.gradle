@@ -30,3 +30,9 @@ check.dependsOn jacocoTestReport
 compileJava {
     options.compilerArgs << "-Xlint:unchecked"
 }
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'MooseDebug'
+    }
+}
