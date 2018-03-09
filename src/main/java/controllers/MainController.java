@@ -9,9 +9,16 @@ import views.Main.TabElements;
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.event.ActionEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.io.File;
 
 public class MainController extends Controller {
+
+    @Override
+    public void windowClosing (WindowEvent event){
+        MainView.getInstance().saveConfiguration();
+    }
 
     @Override
     public void actionPerformed(ActionEvent actionEvent) {

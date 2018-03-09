@@ -9,7 +9,10 @@ import java.util.prefs.Preferences;
  * Singleton class used in every form
  */
 
-
+/**
+ * This class saves and retrieve all the information about
+ * the app configuration.
+ */
 public class ConfigurationModel extends Model {
     private static final ConfigurationModel INSTANCE = new ConfigurationModel();
 
@@ -20,7 +23,6 @@ public class ConfigurationModel extends Model {
     //Language keys
     public static final String IDIOM = "Language.idiom";
     public static final String COUNTRY = "Language.country";
-
 
     private Preferences preferences;
 
@@ -50,8 +52,8 @@ public class ConfigurationModel extends Model {
         return ConfigurationModel.getInstance().getPreferences().get(key, NOT_FOUNDED_STRING);
     }
 
-    public static void putInt (String key, String value){
-        ConfigurationModel.getInstance().getPreferences().put(key, value);
+    public static void putInt (String key, int value){
+        ConfigurationModel.getInstance().getPreferences().putInt(key, value);
     }
 
     public static Integer getInt (String key){

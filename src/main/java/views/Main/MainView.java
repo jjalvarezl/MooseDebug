@@ -3,6 +3,7 @@ package views.Main;
 import abstracts.MVC.Controller;
 import abstracts.MVC.Model;
 import abstracts.MVC.View;
+import models.ConfigurationModel;
 import utils.DataRetrieving;
 import utils.Language;
 import views.LanguageChooser.LanguageChooserView;
@@ -37,6 +38,7 @@ public class MainView extends View {
         initFormContent();
         jMainFrame.setMinimumSize(new Dimension(600,400));
         jMainFrame.setLocationRelativeTo(null);
+        restoreConfiguration ();
     }
 
     private void addMenuToMainForm (){
@@ -120,6 +122,7 @@ public class MainView extends View {
     @Override
     public void addController(Controller controller) {
         jMenuItemLanguage.addActionListener(controller);
+        jMainFrame.addWindowListener(controller);
         mainForm.addController(controller);
     }
 
@@ -130,6 +133,41 @@ public class MainView extends View {
             }
         }
         return -1;
+    }
+
+    public void restoreConfiguration (){
+        int numberOfTabs = ConfigurationModel.getInt("numberOfTabs");
+        if (numberOfTabs>0){
+            for (int i = 0; i < numberOfTabs; i++){
+                mainForm.addTab(ConfigurationModel.getString("tab"+i+".tabId"));
+                System.out.println(ConfigurationModel.getString("tab"+i+".tabId"));
+                mainForm.getTabbedPaneTabs().get(i).getjTextFieldMooseExecutable().setText(ConfigurationModel.getString("tab"+i+".jTextFieldMooseExecutable"));
+                System.out.println(ConfigurationModel.getString("tab"+i+".jTextFieldMooseExecutable"));
+                mainForm.getTabbedPaneTabs().get(i).getjTextFieldMooseImage().setText(ConfigurationModel.getString("tab"+i+".jTextFieldMooseImage"));
+                System.out.println(ConfigurationModel.getString("tab"+i+".jTextFieldMooseImage"));
+            }
+        } else {
+            configureDefaultTab();
+        }
+        System.out.println("Configurations restored");
+    }
+
+    public void saveConfiguration (){
+        int numberOfTabs = mainForm.getTabbedPaneTabs().size();
+        ConfigurationModel.putInt("numberOfTabs", mainForm.getTabbedPaneTabs().size());
+        for (int i = 0; i < numberOfTabs; i++){
+            ConfigurationModel.putString("tab"+i+".tabId", mainForm.getTabbedPaneTabs().get(i).getTabId());
+            System.out.println(ConfigurationModel.getString("tab"+i+".tabId"));
+            ConfigurationModel.putString("tab"+i+".jTextFieldMooseExecutable", mainForm.getTabbedPaneTabs().get(i).getjTextFieldMooseExecutable().getText());
+            System.out.println(ConfigurationModel.getString("tab"+i+".jTextFieldMooseExecutable"));
+            ConfigurationModel.putString("tab"+i+".jTextFieldMooseImage", mainForm.getTabbedPaneTabs().get(i).getjTextFieldMooseImage().getText());
+            System.out.println(ConfigurationModel.getString("tab"+i+".jTextFieldMooseImage"));
+        }
+        System.out.println("Configurations saved");
+    }
+
+    private void configureDefaultTab() {
+        mainForm.addTab("Instance 1");
     }
 
     public MainForm getMainForm() {
