@@ -24,3 +24,7 @@ hs_err_pid*
 # Intellij IDEA / Gradle compilation output
 out/*
 build/*
+.idea/*
+
+# working with gradle:
+.gradle/*

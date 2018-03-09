@@ -25,11 +25,12 @@ public class MooseRunnerModel extends Model implements Runnable{
         Language.setResource(MainForm.class.getName());
         suggestions += (mooseOutput.startsWith("pthread_setschedparam failed")) ? Language.getResource().getString("pthreadSetschedparamFailed")+"\n\n":"";
         suggestions += (mooseOutput.startsWith("Error. Could not determine platform's libc path for VM.")) ? Language.getResource().getString("libcMissed")+"\n\n":"";
-        suggestions += (mooseOutput.startsWith("could not find display driver vm-display-x11")) ? Language.getResource().getString("vmDisplayX11DisplayDriverMissed")+"\n\n" : "";
+        suggestions += (mooseOutput.startsWith("could not find display driver vm-display-X11")) ? Language.getResource().getString("vmDisplayX11DisplayDriverMissed")+"\n\n" : "";
         System.out.println("SUGGESTIONS: "+suggestions);
         System.out.println("LINE READED: "+mooseOutput);
         dataRetrieving.setMooseSuggestion(suggestions);
-        if (mooseOutput.startsWith(" - check that ")){
+        if (mooseOutput.contains("check that")){
+            System.out.print("ENTRA!!!!");
             StringTokenizer st = new StringTokenizer(mooseOutput, " ");
             String myPath="";
             int counter=0;
@@ -68,6 +69,7 @@ public class MooseRunnerModel extends Model implements Runnable{
                 flagStandardOutput = false;
             }
             if (flagStandardOutput) { dataRetrieving.appendMooseOutput("No output retrieved"); }
+            else { dataRetrieving.appendMooseOutput(stdErrorOutputs[0]); }
 
             //Processing error output
             boolean flagErrorOutput = true;
@@ -78,6 +80,7 @@ public class MooseRunnerModel extends Model implements Runnable{
                 flagErrorOutput = false;
             }
             if (flagErrorOutput) { dataRetrieving.appendMooseOutput("No output retrieved"); }
+            else { dataRetrieving.appendMooseOutput(stdErrorOutputs[1]); }
 
             if (flagErrorOutput && flagStandardOutput){
                 dataRetrieving.appendMooseSuggestion("Everything worked fine :).");
