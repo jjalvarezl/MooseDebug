@@ -2,7 +2,9 @@ package controllers;
 
 import abstracts.MVC.Controller;
 import models.MooseRunnerModel;
+import utils.Language;
 import views.LanguageChooser.LanguageChooserView;
+import views.Main.MainForm;
 import views.Main.MainView;
 import views.Main.TabElements;
 
@@ -26,6 +28,21 @@ public class MainController extends Controller {
         switch (actionEvent.getActionCommand()){
             case MainView.J_MENU_ITEM_LANGUAGE_COMMAND:
                 LanguageChooserView.getInstance().getLanguageChooserJDialog().setVisible(true);
+                break;
+            case MainView.J_MENU_ITEM_EXIT_COMMAND:
+                System.exit(0);
+                break;
+            case MainView.J_MENU_ITEM_MOOSE_INSTANCE:
+                // TODO: make new view to ask for the new instance name
+                break;
+            case MainView.J_MENU_ITEM_ABOUT:
+                // TODO: make About's new view
+                break;
+            case MainView.J_MENU_ITEM_COPY_SUGGESTIONS_OUTPUT:
+                // TODO: make suggestions information copied on clipboard
+                break;
+            case MainView.J_MENU_ITEM_COPY_MOOSE_OUTPUT:
+                // TODO: make moose output information copied on clipboard
                 break;
             default:
                 JFileChooser fc = new JFileChooser();
@@ -58,12 +75,6 @@ public class MainController extends Controller {
                                 if (fc.showOpenDialog(MainView.getInstance().getjMainFrame()) == JFileChooser.APPROVE_OPTION){
                                     tabElements.getjTextFieldMooseImage().setText(fc.getSelectedFile().getAbsolutePath());
                                 }
-                                /*JOptionPane.showMessageDialog(
-                                        null,
-                                        "Tab: "+MainView.getInstance().getMainForm().getTabbedPaneTabs().indexOf(tabElements),
-                                        "Funciona",
-                                        JOptionPane.INFORMATION_MESSAGE
-                                );*/
                                 break;
                         }
                     }
