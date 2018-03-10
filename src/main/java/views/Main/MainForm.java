@@ -37,21 +37,6 @@ public class MainForm {
         constraints.fill = GridBagConstraints.BOTH;
         tabbedPane = new JTabbedPane();
         tabbedPaneTabs = new ArrayList<>();
-        /*TabElements tabElements1 = new TabElements();
-        TabElements tabElements2 = new TabElements();
-        TabElements tabElements3 = new TabElements();
-        tabElements1.setTabId("Instancia 1");
-        tabElements2.setTabId("Instancia 2");
-        tabElements3.setTabId("Instancia 3");
-        System.out.println(tabElements1.getTabId());
-        System.out.println(tabElements2.getTabId());
-        tabbedPane.addTab("Instancia 1", tabElements1.getMainPanel());
-        tabbedPane.addTab("Instancia 2", tabElements2.getMainPanel());
-        tabbedPane.addTab("Instancia 3", tabElements3.getMainPanel());
-        tabbedPaneTabs.add(tabElements1);
-        tabbedPaneTabs.add(tabElements2);
-        tabbedPaneTabs.add(tabElements3);*/
-        //tabbedPane.remove(1);
         tabbedPane.getSelectedIndex();
 
         jPanelMain.add(tabbedPane, constraints);
@@ -59,6 +44,7 @@ public class MainForm {
 
     public void addTab (String tabName){
         TabElements tabElements = new TabElements();
+        tabElements.addController(controller);
         tabElements.setTabId(tabName);
         tabbedPaneTabs.add(tabElements);
         tabbedPane.addTab(tabName, tabElements.getMainPanel());
@@ -85,6 +71,15 @@ public class MainForm {
         for (TabElements tabElements: tabbedPaneTabs){
             tabElements.addController(controller);
         }
+    }
+
+    public boolean isTabIdSettedAlready (String tabId){
+        for (TabElements tabElements: tabbedPaneTabs) {
+            if (tabElements.getTabId().equals(tabId)){
+                return true;
+            }
+        }
+        return false;
     }
 
     public ArrayList<TabElements> getTabbedPaneTabs() {

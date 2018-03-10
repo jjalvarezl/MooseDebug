@@ -28,13 +28,22 @@ public class MainView extends View {
     private JMenuItem jMenuItemCopyMooseOutput;
     private JMenuItem jMenuItemCopySuggestionsOutput;
 
+    //Menu container declarations
+    JMenuBar jMenuBarMainForm;
+    JMenu jMenuFile;
+    JMenu jMenuNew;
+    JMenu jMenuEdit;
+    JMenu jMenuCopy;
+    JMenu jMenuPreferences;
+    JMenu jMenuHelp;
+
     //Action commands
-    public static final String J_MENU_ITEM_LANGUAGE_COMMAND = "jMenuItemLanguage";
-    public static final String J_MENU_ITEM_EXIT_COMMAND = "jMenuItemExit";
-    public static final String J_MENU_ITEM_MOOSE_INSTANCE = "jMenuItemMooseInstance";
-    public static final String J_MENU_ITEM_ABOUT = "jMenuItemAbout";
-    public static final String J_MENU_ITEM_COPY_MOOSE_OUTPUT = "jMenuItemCopyMooseOutput";
-    public static final String J_MENU_ITEM_COPY_SUGGESTIONS_OUTPUT = "jMenuItemCopySuggestionsOutput";
+    public static final String J_MENU_ITEM_LANGUAGE_COMMAND = "mainView.jMenuItemLanguage";
+    public static final String J_MENU_ITEM_EXIT_COMMAND = "mainView.jMenuItemExit";
+    public static final String J_MENU_ITEM_MOOSE_INSTANCE = "mainView.jMenuItemMooseInstance";
+    public static final String J_MENU_ITEM_ABOUT = "mainView.jMenuItemAbout";
+    public static final String J_MENU_ITEM_COPY_MOOSE_OUTPUT = "mainView.jMenuItemCopyMooseOutput";
+    public static final String J_MENU_ITEM_COPY_SUGGESTIONS_OUTPUT = "mainView.jMenuItemCopySuggestionsOutput";
 
     public MainView () {
         super();
@@ -51,37 +60,27 @@ public class MainView extends View {
     private void addMenuToMainForm (){
 
         //Making the bar
-        JMenuBar jMenuBarMainForm = new JMenuBar();
-        JMenu jMenuFile = new JMenu(Language.getResource().getString("jMenuFile"));
-        jMenuFile.setMnemonic(KeyStroke.getKeyStroke(Language.getResource().getString("jMenuFileMnemotecnic")).getKeyCode());
-        JMenu jMenuNew = new JMenu(Language.getResource().getString("jMenuNew"));
-        jMenuNew.setMnemonic(KeyStroke.getKeyStroke(Language.getResource().getString("jMenuNewMnemotecnic")).getKeyCode());
-        jMenuItemMooseInstance = new JMenuItem(Language.getResource().getString("jMenuItemMooseInstance"));
-        jMenuItemMooseInstance.setMnemonic(KeyStroke.getKeyStroke(Language.getResource().getString("jMenuItemMooseInstanceMnemotecnic")).getKeyCode());
+        jMenuBarMainForm = new JMenuBar();
+        jMenuFile = new JMenu();
+        jMenuNew = new JMenu();
+        jMenuItemMooseInstance = new JMenuItem();
         jMenuItemMooseInstance.setActionCommand(J_MENU_ITEM_MOOSE_INSTANCE);
-        jMenuItemExit = new JMenuItem(Language.getResource().getString("jMenuItemExit"));
-        jMenuItemExit.setMnemonic(KeyStroke.getKeyStroke(Language.getResource().getString("jMenuItemExitMnemotecnic")).getKeyCode());
+        jMenuItemExit = new JMenuItem();
         jMenuItemExit.setActionCommand(J_MENU_ITEM_EXIT_COMMAND);
-        JMenu jMenuEdit = new JMenu(Language.getResource().getString("jMenuEdit"));
-        jMenuEdit.setMnemonic(KeyStroke.getKeyStroke(Language.getResource().getString("jMenuEditMnemotecnic")).getKeyCode());
-        JMenu jMenuCopy = new JMenu(Language.getResource().getString("jMenuCopy"));
-        jMenuCopy.setMnemonic(KeyStroke.getKeyStroke(Language.getResource().getString("jMenuCopyMnemotecnic")).getKeyCode());
-        jMenuItemCopyMooseOutput = new JMenuItem(Language.getResource().getString("jMenuItemCopyMooseOutput"));
-        jMenuItemCopyMooseOutput.setMnemonic(KeyStroke.getKeyStroke(Language.getResource().getString("jMenuItemCopyMooseOutputMnemotecnic")).getKeyCode());
+        jMenuEdit = new JMenu();
+        jMenuCopy = new JMenu();
+        jMenuItemCopyMooseOutput = new JMenuItem();
         jMenuItemCopyMooseOutput.setActionCommand(J_MENU_ITEM_COPY_MOOSE_OUTPUT);
-        jMenuItemCopySuggestionsOutput = new JMenuItem(Language.getResource().getString("jMenuItemCopySuggestionsOutput"));
-        jMenuItemCopySuggestionsOutput.setMnemonic(KeyStroke.getKeyStroke(Language.getResource().getString("jMenuItemCopySuggestionsOutputMnemotecnic")).getKeyCode());
+        jMenuItemCopySuggestionsOutput = new JMenuItem();
         jMenuItemCopySuggestionsOutput.setActionCommand(J_MENU_ITEM_COPY_SUGGESTIONS_OUTPUT);
-        JMenu jMenuPreferences = new JMenu(Language.getResource().getString("jMenuPreferences"));
-        jMenuPreferences.setMnemonic(KeyStroke.getKeyStroke(Language.getResource().getString("jMenuPreferencesMnemotecnic")).getKeyCode());
-        jMenuItemLanguage = new JMenuItem(Language.getResource().getString("jMenuItemLanguage"));
-        jMenuItemLanguage.setMnemonic(KeyStroke.getKeyStroke(Language.getResource().getString("jMenuItemLanguageMnemotecnic")).getKeyCode());
+        jMenuPreferences = new JMenu();
+        jMenuItemLanguage = new JMenuItem();
         jMenuItemLanguage.setActionCommand(J_MENU_ITEM_LANGUAGE_COMMAND);
-        JMenu jMenuHelp = new JMenu(Language.getResource().getString("jMenuHelp"));
-        jMenuHelp.setMnemonic(KeyStroke.getKeyStroke(Language.getResource().getString("jMenuHelpMnemotecnic")).getKeyCode());
-        jMenuItemAbout = new JMenuItem(Language.getResource().getString("jMenuItemAbout"));
-        jMenuItemAbout.setMnemonic(KeyStroke.getKeyStroke(Language.getResource().getString("jMenuItemAboutMnemotecnic")).getKeyCode());
+        jMenuHelp = new JMenu();
+        jMenuItemAbout = new JMenuItem();
         jMenuItemAbout.setActionCommand(J_MENU_ITEM_ABOUT);
+
+        setTextToView();
 
         //Adding elements to mainFormJMenuBar
         jMenuHelp.add(jMenuItemAbout);
@@ -104,9 +103,36 @@ public class MainView extends View {
         jMainFrame.repaint();
     }
 
-    private void initFormContent() {
+    private void setTextToView(){
         Language.setResource(MainForm.class.getName());
         jMainFrame.setTitle(Language.getResource().getString("FormTitle"));
+        jMenuFile.setText(Language.getResource().getString("jMenuFile"));
+        jMenuFile.setMnemonic(KeyStroke.getKeyStroke(Language.getResource().getString("jMenuFileMnemotecnic")).getKeyCode());
+        jMenuNew.setText(Language.getResource().getString("jMenuNew"));
+        jMenuNew.setMnemonic(KeyStroke.getKeyStroke(Language.getResource().getString("jMenuNewMnemotecnic")).getKeyCode());
+        jMenuItemMooseInstance.setText(Language.getResource().getString("jMenuItemMooseInstance"));
+        jMenuItemMooseInstance.setMnemonic(KeyStroke.getKeyStroke(Language.getResource().getString("jMenuItemMooseInstanceMnemotecnic")).getKeyCode());
+        jMenuItemExit.setText(Language.getResource().getString("jMenuItemExit"));
+        jMenuItemExit.setMnemonic(KeyStroke.getKeyStroke(Language.getResource().getString("jMenuItemExitMnemotecnic")).getKeyCode());
+        jMenuEdit.setText(Language.getResource().getString("jMenuEdit"));
+        jMenuEdit.setMnemonic(KeyStroke.getKeyStroke(Language.getResource().getString("jMenuEditMnemotecnic")).getKeyCode());
+        jMenuCopy.setText(Language.getResource().getString("jMenuCopy"));
+        jMenuCopy.setMnemonic(KeyStroke.getKeyStroke(Language.getResource().getString("jMenuCopyMnemotecnic")).getKeyCode());
+        jMenuItemCopyMooseOutput.setText(Language.getResource().getString("jMenuItemCopyMooseOutput"));
+        jMenuItemCopyMooseOutput.setMnemonic(KeyStroke.getKeyStroke(Language.getResource().getString("jMenuItemCopyMooseOutputMnemotecnic")).getKeyCode());
+        jMenuItemCopySuggestionsOutput.setText(Language.getResource().getString("jMenuItemCopySuggestionsOutput"));
+        jMenuItemCopySuggestionsOutput.setMnemonic(KeyStroke.getKeyStroke(Language.getResource().getString("jMenuItemCopySuggestionsOutputMnemotecnic")).getKeyCode());
+        jMenuPreferences.setText(Language.getResource().getString("jMenuPreferences"));
+        jMenuPreferences.setMnemonic(KeyStroke.getKeyStroke(Language.getResource().getString("jMenuPreferencesMnemotecnic")).getKeyCode());
+        jMenuItemLanguage.setText(Language.getResource().getString("jMenuItemLanguage"));
+        jMenuItemLanguage.setMnemonic(KeyStroke.getKeyStroke(Language.getResource().getString("jMenuItemLanguageMnemotecnic")).getKeyCode());
+        jMenuHelp.setText(Language.getResource().getString("jMenuHelp"));
+        jMenuHelp.setMnemonic(KeyStroke.getKeyStroke(Language.getResource().getString("jMenuHelpMnemotecnic")).getKeyCode());
+        jMenuItemAbout.setText(Language.getResource().getString("jMenuItemAbout"));
+        jMenuItemAbout.setMnemonic(KeyStroke.getKeyStroke(Language.getResource().getString("jMenuItemAboutMnemotecnic")).getKeyCode());
+    }
+
+    private void initFormContent() {
         addMenuToMainForm();
     }
 
@@ -133,7 +159,7 @@ public class MainView extends View {
             );
         } else {
             System.out.println("Update from MainView");
-            initFormContent();
+            setTextToView();
         }
     }
 
@@ -143,6 +169,9 @@ public class MainView extends View {
         jMenuItemLanguage.addActionListener(controller);
         jMenuItemExit.addActionListener(controller);
         jMenuItemMooseInstance.addActionListener(controller);
+        jMenuItemCopyMooseOutput.addActionListener(controller);
+        jMenuItemCopySuggestionsOutput.addActionListener(controller);
+        jMenuItemAbout.addActionListener(controller);
 
         // Setting controller to the jMainFrame object.
         jMainFrame.addWindowListener(controller);
@@ -191,7 +220,7 @@ public class MainView extends View {
         System.out.println("Configurations saved");
     }
 
-    private void configureDefaultTab() {
+    public void configureDefaultTab() {
         mainForm.addTab("Instance 1");
     }
 

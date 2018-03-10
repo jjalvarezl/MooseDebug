@@ -26,10 +26,10 @@ public class TabElements {
     private JSplitPane jSplitPane;
 
     //All action commands
-    public static final String J_BUTTON_SEARCH_MOOSE_EXECUTABLE_COMMAND= "jButtonSearchMooseExecutable";
-    public static final String J_BUTTON_SEARCH_MOOSE_IMAGE_COMMAND= "jButtonSearchMooseImage";
-    public static final String J_BUTTON_RUN_STOP_COMMAND= "jButtonRunStop";
-    public static final String J_BUTTON_DELETE_COMMAND= "jButtonDelete";
+    public static final String J_BUTTON_SEARCH_MOOSE_EXECUTABLE_COMMAND= "mainView.mainForm.jButtonSearchMooseExecutable";
+    public static final String J_BUTTON_SEARCH_MOOSE_IMAGE_COMMAND= "mainView.mainForm.jButtonSearchMooseImage";
+    public static final String J_BUTTON_RUN_STOP_COMMAND= "mainView.mainForm.jButtonRunStop";
+    public static final String J_BUTTON_DELETE_COMMAND= "mainView.mainForm.jButtonDelete";
 
     public TabElements () {
         setMainPanel(new JPanel());
