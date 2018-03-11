@@ -27,7 +27,6 @@ public class LanguageChooserController extends Controller {
                     System.out.println(newLocale[0]+newLocale[1]);
                     if (Language.setLanguage(newLocale[0], newLocale[1])){
                         Language.setResource(LanguageChooserForm.class.getName());
-                        //LanguageChooserView.getInstance().getLanguageChooserJDialog().setVisible(false);
                         JOptionPane.showMessageDialog(
                                 null,
                                 Language.getResource().getString("JListLanguageSelectionLanguageSelectedMessage"),

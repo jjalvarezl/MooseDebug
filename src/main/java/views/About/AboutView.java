@@ -20,6 +20,7 @@ public class AboutView extends View{
     private AboutView (){
         aboutForm = new AboutForm();
         jDialogMain = new JDialog();
+        jDialogMain.setResizable(false);
         jDialogMain.setContentPane(aboutForm.getjPanelMain());
         jDialogMain.setLocationRelativeTo(null);
         jDialogMain.setTitle("About");

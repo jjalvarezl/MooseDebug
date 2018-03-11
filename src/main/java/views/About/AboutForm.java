@@ -21,7 +21,7 @@ public class AboutForm {
         GridBagConstraints c = new GridBagConstraints();
         jPanelMain = new JPanel(new GridBagLayout());
 
-        jLabelMessage = new JLabel("<html><body><p align='center'>Moose Debug v1.0<br/><br/>Support, make a <a href='https://github.com/jjalvarezl/MooseDebug/issues'>GitHub issue on https://github.com/jjalvarezl/MooseDebug/issues</a>.</p></body></html>");
+        jLabelMessage = new JLabel("<html><body><p align='center'>Moose Debug v1.0<br/><br/>Need Support?: make an issue GitHub.</p></body></html>", SwingConstants.CENTER);
         c.insets = new Insets(10,10,5,10);
         c.gridwidth=2;
         c.fill = GridBagConstraints.BOTH;
@@ -30,25 +30,28 @@ public class AboutForm {
         jPanelMain.add(jLabelMessage,c);
 
         jButtonGoToGitHubIssue = new JButton("Go to GitHub Issues");
+        jButtonGoToGitHubIssue.setActionCommand(J_BUTTON_GO_TO_GITHUB_ISSUE_COMMAND);
         c.insets = new Insets(5,10,10,10);
         c.gridwidth=1;
         c.fill = GridBagConstraints.NONE;
-        c.weightx=0;
+        c.weightx=0.1;
         c.weighty=0;
         c.gridx=0;
         c.gridy=1;
+        c.anchor = GridBagConstraints.PAGE_END;
         jPanelMain.add(jButtonGoToGitHubIssue,c);
 
         jButtonAccept = new JButton("Accept");
+        jButtonAccept.setActionCommand(J_BUTTON_ACCEPT_COMMAND);
         c.insets = new Insets(5,10,10,10);
+        c.weightx=0.1;
         c.gridx=1;
+        c.anchor = GridBagConstraints.PAGE_END;
         jPanelMain.add(jButtonAccept,c);
     }
 
     public void addController (Controller controller){
-        jButtonAccept.setActionCommand(J_BUTTON_ACCEPT_COMMAND);
-        jButtonAccept.addActionListener(controller);
-        jButtonAccept.setActionCommand(J_BUTTON_GO_TO_GITHUB_ISSUE_COMMAND);
+        jButtonGoToGitHubIssue.addActionListener(controller);
         jButtonAccept.addActionListener(controller);
     }
 

@@ -2,11 +2,8 @@ package controllers;
 
 import abstracts.MVC.Controller;
 import models.MooseRunnerModel;
-import sun.applet.Main;
-import utils.Language;
 import views.About.AboutView;
 import views.LanguageChooser.LanguageChooserView;
-import views.Main.MainForm;
 import views.Main.MainView;
 import views.Main.TabElements;
 
@@ -14,7 +11,6 @@ import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.ActionEvent;
-import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.File;
 import java.awt.datatransfer.*;
