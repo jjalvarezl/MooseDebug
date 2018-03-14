@@ -3,7 +3,10 @@ package views.About;
 import abstracts.MVC.Controller;
 import abstracts.MVC.View;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
+import java.awt.*;
+import java.io.IOException;
 import java.util.Observable;
 
 public class AboutView extends View{
@@ -24,6 +27,13 @@ public class AboutView extends View{
         jDialogMain.setContentPane(aboutForm.getjPanelMain());
         jDialogMain.setLocationRelativeTo(null);
         jDialogMain.setTitle("About");
+        //Setting icon to jframe
+        try {
+            Image img = ImageIO.read(getClass().getResourceAsStream("../../images/icon"));
+            jDialogMain.setIconImage(img);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         jDialogMain.pack();
     }
 

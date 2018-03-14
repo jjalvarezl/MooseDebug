@@ -4,7 +4,10 @@ import abstracts.MVC.Controller;
 import abstracts.MVC.View;
 import utils.Language;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
+import java.awt.*;
+import java.io.IOException;
 import java.util.*;
 
 public class LanguageChooserView extends View {
@@ -55,6 +58,14 @@ public class LanguageChooserView extends View {
         languageChooserForm.getJButtonAccept().setText(rb.getString("jButtonAccept"));
         languageChooserForm.getJButtonCancel().setText(rb.getString("jButtonCancel"));
         languageChooserJDialog.setContentPane(languageChooserForm.getJPanelMain());
+
+        //Setting icon to jframe
+        try {
+            Image img = ImageIO.read(getClass().getResourceAsStream("../../images/icon"));
+            languageChooserJDialog.setIconImage(img);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     /**

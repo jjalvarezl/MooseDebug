@@ -7,8 +7,11 @@ import models.ConfigurationModel;
 import utils.DataRetrieving;
 import utils.Language;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.io.File;
+import java.io.IOException;
 import java.util.Observable;
 
 public class MainView extends View {
@@ -54,6 +57,15 @@ public class MainView extends View {
         initFormContent();
         jMainFrame.setMinimumSize(new Dimension(600,400));
         jMainFrame.setLocationRelativeTo(null);
+
+        //Setting icon to jframe
+        try {
+            Image img = ImageIO.read(getClass().getResourceAsStream("../../images/icon"));
+            jMainFrame.setIconImage(img);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
         restoreConfiguration ();
     }
 
