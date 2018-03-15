@@ -61,7 +61,7 @@ public class LanguageChooserView extends View {
 
         //Setting icon to jframe
         try {
-            Image img = ImageIO.read(getClass().getResourceAsStream("../../images/icon"));
+            Image img = ImageIO.read(getClass().getResourceAsStream("icon"));
             languageChooserJDialog.setIconImage(img);
         } catch (IOException e) {
             e.printStackTrace();

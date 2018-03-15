@@ -29,7 +29,7 @@ public class AboutView extends View{
         jDialogMain.setTitle("About");
         //Setting icon to jframe
         try {
-            Image img = ImageIO.read(getClass().getResourceAsStream("../../images/icon"));
+            Image img = ImageIO.read(getClass().getResourceAsStream("icon"));
             jDialogMain.setIconImage(img);
         } catch (IOException e) {
             e.printStackTrace();
