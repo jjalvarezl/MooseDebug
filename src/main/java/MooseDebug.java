@@ -18,5 +18,6 @@ public class MooseDebug {
         LanguageChooserView.getInstance().addController(new LanguageChooserController());
         LanguageChooserView.getInstance().addModel(ConfigurationModel.getInstance());
         AboutView.getInstance().addController(new AboutController());
+        AboutView.getInstance().addModel(ConfigurationModel.getInstance());
     }
 }

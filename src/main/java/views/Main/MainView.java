@@ -10,6 +10,9 @@ import utils.Language;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.InputEvent;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
 import java.util.Observable;
@@ -55,7 +58,7 @@ public class MainView extends View {
         jMainFrame.setContentPane(mainForm.getjPanelMain());
         jMainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         initFormContent();
-        jMainFrame.setMinimumSize(new Dimension(600,400));
+        jMainFrame.setMinimumSize(new Dimension(650,400));
         jMainFrame.setLocationRelativeTo(null);
 
         //Setting icon to jframe
@@ -116,6 +119,7 @@ public class MainView extends View {
     }
 
     private void setTextToView(){
+        //Setting language for menu
         Language.setResource(MainForm.class.getName());
         jMainFrame.setTitle(Language.getResource().getString("FormTitle"));
         jMenuFile.setText(Language.getResource().getString("jMenuFile"));
@@ -124,24 +128,40 @@ public class MainView extends View {
         jMenuNew.setMnemonic(KeyStroke.getKeyStroke(Language.getResource().getString("jMenuNewMnemotecnic")).getKeyCode());
         jMenuItemMooseInstance.setText(Language.getResource().getString("jMenuItemMooseInstance"));
         jMenuItemMooseInstance.setMnemonic(KeyStroke.getKeyStroke(Language.getResource().getString("jMenuItemMooseInstanceMnemotecnic")).getKeyCode());
+        jMenuItemMooseInstance.setAccelerator(KeyStroke.getKeyStroke(KeyStroke.getKeyStroke(Language.getResource().getString("jMenuItemMooseInstanceMnemotecnic")).getKeyCode(), KeyEvent.CTRL_DOWN_MASK));
         jMenuItemExit.setText(Language.getResource().getString("jMenuItemExit"));
         jMenuItemExit.setMnemonic(KeyStroke.getKeyStroke(Language.getResource().getString("jMenuItemExitMnemotecnic")).getKeyCode());
+        jMenuItemExit.setAccelerator(KeyStroke.getKeyStroke(KeyStroke.getKeyStroke(Language.getResource().getString("jMenuItemExitMnemotecnic")).getKeyCode(), KeyEvent.CTRL_DOWN_MASK));
         jMenuEdit.setText(Language.getResource().getString("jMenuEdit"));
         jMenuEdit.setMnemonic(KeyStroke.getKeyStroke(Language.getResource().getString("jMenuEditMnemotecnic")).getKeyCode());
         jMenuCopy.setText(Language.getResource().getString("jMenuCopy"));
         jMenuCopy.setMnemonic(KeyStroke.getKeyStroke(Language.getResource().getString("jMenuCopyMnemotecnic")).getKeyCode());
         jMenuItemCopyMooseOutput.setText(Language.getResource().getString("jMenuItemCopyMooseOutput"));
         jMenuItemCopyMooseOutput.setMnemonic(KeyStroke.getKeyStroke(Language.getResource().getString("jMenuItemCopyMooseOutputMnemotecnic")).getKeyCode());
+        jMenuItemCopyMooseOutput.setAccelerator(KeyStroke.getKeyStroke(KeyStroke.getKeyStroke(Language.getResource().getString("jMenuItemCopyMooseOutputMnemotecnic")).getKeyCode(), KeyEvent.CTRL_DOWN_MASK));
         jMenuItemCopySuggestionsOutput.setText(Language.getResource().getString("jMenuItemCopySuggestionsOutput"));
         jMenuItemCopySuggestionsOutput.setMnemonic(KeyStroke.getKeyStroke(Language.getResource().getString("jMenuItemCopySuggestionsOutputMnemotecnic")).getKeyCode());
+        jMenuItemCopySuggestionsOutput.setAccelerator(KeyStroke.getKeyStroke(KeyStroke.getKeyStroke(Language.getResource().getString("jMenuItemCopySuggestionsOutputMnemotecnic")).getKeyCode(), ActionEvent.CTRL_MASK+ActionEvent.ALT_MASK));
         jMenuPreferences.setText(Language.getResource().getString("jMenuPreferences"));
         jMenuPreferences.setMnemonic(KeyStroke.getKeyStroke(Language.getResource().getString("jMenuPreferencesMnemotecnic")).getKeyCode());
         jMenuItemLanguage.setText(Language.getResource().getString("jMenuItemLanguage"));
         jMenuItemLanguage.setMnemonic(KeyStroke.getKeyStroke(Language.getResource().getString("jMenuItemLanguageMnemotecnic")).getKeyCode());
+        jMenuItemLanguage.setAccelerator(KeyStroke.getKeyStroke(KeyStroke.getKeyStroke(Language.getResource().getString("jMenuItemLanguageMnemotecnic")).getKeyCode(), KeyEvent.CTRL_DOWN_MASK));
         jMenuHelp.setText(Language.getResource().getString("jMenuHelp"));
         jMenuHelp.setMnemonic(KeyStroke.getKeyStroke(Language.getResource().getString("jMenuHelpMnemotecnic")).getKeyCode());
         jMenuItemAbout.setText(Language.getResource().getString("jMenuItemAbout"));
         jMenuItemAbout.setMnemonic(KeyStroke.getKeyStroke(Language.getResource().getString("jMenuItemAboutMnemotecnic")).getKeyCode());
+        jMenuItemAbout.setAccelerator(KeyStroke.getKeyStroke(KeyStroke.getKeyStroke(Language.getResource().getString("jMenuItemAboutMnemotecnic")).getKeyCode(), KeyEvent.CTRL_DOWN_MASK));
+
+        //Setting language for each tabElements.
+        for (TabElements tabElements: mainForm.getTabbedPaneTabs()) {
+            tabElements.getjButtonDelete().setText(Language.getResource().getString("jButtonDelete"));
+            tabElements.getjButtonRunStop().setText(Language.getResource().getString("jButtonRunStop"));
+            tabElements.getjLabelMooseExecutable().setText(Language.getResource().getString("jLabelMooseExecutable"));
+            tabElements.getjLabelMooseImage().setText(Language.getResource().getString("jLabelMooseImage"));
+            tabElements.getjButtonSearchMooseExecutable().setText(Language.getResource().getString("jButtonSearchMooseExecutable"));
+            tabElements.getjButtonSearchMooseImage().setText(Language.getResource().getString("jButtonSearchMooseImage"));
+        }
     }
 
     private void initFormContent() {

@@ -21,7 +21,7 @@ public class AboutForm {
         GridBagConstraints c = new GridBagConstraints();
         jPanelMain = new JPanel(new GridBagLayout());
 
-        jLabelMessage = new JLabel("<html><body><p align='center'>Moose Debug v1.0<br/><br/>Need Support?: make an issue GitHub.</p></body></html>", SwingConstants.CENTER);
+        jLabelMessage = new JLabel("",  SwingConstants.CENTER);
         c.insets = new Insets(10,10,5,10);
         c.gridwidth=2;
         c.fill = GridBagConstraints.BOTH;
@@ -29,7 +29,7 @@ public class AboutForm {
         c.weighty=1.0;
         jPanelMain.add(jLabelMessage,c);
 
-        jButtonGoToGitHubIssue = new JButton("Go to GitHub Issues");
+        jButtonGoToGitHubIssue = new JButton();
         jButtonGoToGitHubIssue.setActionCommand(J_BUTTON_GO_TO_GITHUB_ISSUE_COMMAND);
         c.insets = new Insets(5,10,10,10);
         c.gridwidth=1;
@@ -41,7 +41,7 @@ public class AboutForm {
         c.anchor = GridBagConstraints.PAGE_END;
         jPanelMain.add(jButtonGoToGitHubIssue,c);
 
-        jButtonAccept = new JButton("Accept");
+        jButtonAccept = new JButton();
         jButtonAccept.setActionCommand(J_BUTTON_ACCEPT_COMMAND);
         c.insets = new Insets(5,10,10,10);
         c.weightx=0.1;

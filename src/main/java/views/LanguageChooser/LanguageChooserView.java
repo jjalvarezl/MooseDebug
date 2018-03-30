@@ -24,14 +24,13 @@ public class LanguageChooserView extends View {
         languageChooserJDialog = new JDialog();
         languageChooserForm = new LanguageChooserForm();
 
-        //Content initialization
-        initFormContent();
-
         //Form display.
         languageChooserJDialog.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        languageChooserJDialog.pack();
         languageChooserJDialog.setLocationRelativeTo(null);
         languageChooserJDialog.setVisible(false);
+
+        //Content initialization
+        initFormContent();
     }
 
     @Override
@@ -66,6 +65,8 @@ public class LanguageChooserView extends View {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        languageChooserJDialog.pack();
     }
 
     /**
